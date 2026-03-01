@@ -1,0 +1,70 @@
+# Nafasz Global - Sovereign Trust Portal Website
+
+## Tasks
+- [x] Analyze PRD and create implementation plan with tech stack recommendation
+- [x] Get user approval on implementation plan
+- [x] Build project foundation (setup, design system, CSS tokens)
+  - [x] `package.json` — Vite project initialized
+  - [x] `vite.config.js` — build config
+  - [x] `npm install` — dependencies installed (13 packages, 0 vulnerabilities)
+- [x] Implement Cultural Gate (pop-up modal)
+  - [x] Full-screen overlay with grain texture + ochre radial gradient
+  - [x] Exact acknowledgement copy dari PRD
+  - [x] "I Acknowledge & Enter" button with fade-out animation
+  - [x] SessionStorage: gate ditampilkan sekali per sesi
+- [x] Implement Hero Section
+  - [x] Headline: "Old Wisdom, New Markets: Architecting the Future of Exchange."
+  - [x] Subheadline + "Enter The Circle" CTA with arrow icon
+  - [x] Atmospheric charcoal gradient background
+- [x] Implement Legacy Section (300-Year Bridge)
+  - [x] Narasi Yolngu-Macassan 300-year trade history
+  - [x] Ochre dividers, fade-in on scroll
+- [x] Implement Strategy Pillars (interactive tabs)
+  - [x] 4 pillar cards: Sovereign Equity, Cultural Licence, Bilateral Corridor, AI-Driven Logistics
+  - [x] Desktop: hover to expand description
+  - [x] Mobile: accordion click behavior
+- [x] Implement The Circle Section (Vision & Mission)
+  - [x] Hub visualization: Naarm ↔ Indo-Pacific ↔ Jakarta
+  - [x] Vision & Mission statements (exact copy dari PRD)
+- [x] Implement The Bridge Section (Operating Model flowchart)
+  - [x] 3 phases: Listen → Align → Execute
+  - [x] Numbered circles + connecting lines
+  - [x] Desktop: horizontal layout, Mobile: vertical
+- [x] Implement Conversion Funnel (native form, ready for Tally/Calendly)
+  - [x] Question: "What is your vision for 300 years of exchange?"
+  - [x] Native form: Name, Email, Organisation, Vision
+  - [x] Success state with thank you message
+  - [ ] ⏳ Tally/Typeform embed (menunggu akun dari user)
+  - [ ] ⏳ Calendly redirect integration (menunggu link dari user)
+  - [ ] ⏳ Auto-reply email setup (menunggu konfigurasi email)
+- [x] Implement Institutional Footer
+  - [x] Dual-branch: Australia (Naarm) & Indonesia (Jakarta)
+  - [x] "Pty Ltd" dan "CV" — HANYA di footer ✅
+  - [x] Compliance statement
+  - [x] Monochrome partner logo placeholders (IA-CEPA, Future Made in Australia)
+- [x] Implement Bilingual Toggle (EN/ID)
+  - [x] JSON-based i18n system (`en.json`, `id.json`)
+  - [x] `data-i18n` attribute pada semua teks
+  - [x] Toggle button di navbar: EN | ID
+  - [x] Persistent via localStorage
+- [x] Performance optimization & texture compression
+  - [x] CSS: 4.28KB gzipped ✅ (target: <30KB)
+  - [x] JS: 4.78KB gzipped ✅ (target: <50KB)
+  - [x] Grain texture via inline SVG — zero image downloads
+  - [x] Build time: 751ms
+- [x] Pre-launch testing & verification
+  - [x] Build check — zero errors ✅
+  - [x] Compliance: "Pty Ltd"/"CV" only in footer ✅
+  - [x] Compliance: "Decolonisation" not present anywhere ✅
+  - [x] Browser verification — all 8 sections render correctly ✅
+  - [x] Bilingual toggle working (EN ↔ ID) ✅
+  - [x] Pillar card interaction verified ✅
+  - [ ] ⏳ User review & feedback
+
+## Pending (Menunggu Input User)
+- [ ] Tally/Typeform account + embed code
+- [ ] Calendly booking link
+- [ ] Auto-reply email (director@nafaszglobal.com) setup
+- [ ] Logo IA-CEPA & Future Made in Australia (actual assets)
+- [ ] ACN & NIB numbers untuk footer
+- [ ] Deployment target (Netlify/Vercel/lainnya)

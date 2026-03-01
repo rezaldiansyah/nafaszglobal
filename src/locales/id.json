@@ -1,0 +1,74 @@
+{
+    "nav": {
+        "language": "ID",
+        "enter": "Masuk"
+    },
+    "gate": {
+        "acknowledgement": "Kami mengakui masyarakat Wurundjeri Woi-wurrung dan Bunurong / Boon Wurrung dari Bangsa Kulin sebagai Penjaga Kedaulatan tanah tempat kami bekerja dan berkumpul di Naarm (Melbourne). Kami memberikan penghormatan mendalam kepada para Tetua mereka — masa lalu dan masa kini — serta mengakui bahwa kedaulatan tidak pernah diserahkan.",
+        "acknowledgement2": "Kami juga menghormati para leluhur dan berbagai bangsa di seluruh kepulauan Australia dan Indonesia. Kami berdiri dalam warisan 300 tahun jembatan perdagangan Yolngu-Makassar; sebuah hubungan yang dibangun atas kekerabatan dan pertukaran timbal balik.",
+        "acknowledgement3": "Dari mana pun Anda bergabung dengan kami, kami mengundang Anda untuk menghormati Penjaga Adat dari tanah di bawah kaki Anda.",
+        "welcome": "Selamat datang di masa depan pertukaran.",
+        "cta": "Saya Mengakui & Masuk"
+    },
+    "hero": {
+        "headline": "Kearifan Lama, Pasar Baru:",
+        "headline2": "Merancang Masa Depan Pertukaran.",
+        "subheadline": "Konsultan boutique yang menghubungkan pemimpin industri, Kedaulatan Bangsa Pertama, dan modal global untuk merancang sistem kekayaan bilateral antara Australia dan Indonesia.",
+        "cta": "Masuki Lingkaran"
+    },
+    "legacy": {
+        "label": "Warisan",
+        "title": "Jembatan 300 Tahun",
+        "p1": "Kami menghormati masyarakat Yolngu di Arnhem Land Timur Laut. Selama berabad-abad, mereka duduk dalam lingkaran bersama masyarakat Makassar dari Sulawesi—membangun jembatan perdagangan yang dilandasi timbal balik, bukan ekstraksi.",
+        "p2": "Model pertukaran pra-kolonial ini membentuk filosofi operasional Nafasz Global: pengelolaan, kesinambungan, dan kemakmuran bersama."
+    },
+    "pillars": {
+        "label": "Strategi",
+        "title": "Pilar Kami",
+        "p1_title": "Ekuitas Berdaulat",
+        "p1_desc": "Mentransisikan industri dari ekstraksi transaksional → partisipasi antargenerasi.",
+        "p2_title": "Lisensi Budaya (SLO)",
+        "p2_desc": "Mengoperasionalkan Lisensi Sosial melalui kerangka keterlibatan dan persetujuan Bangsa Pertama yang terstruktur.",
+        "p3_title": "Koridor Bilateral",
+        "p3_desc": "Diposisikan dalam IA-CEPA dan visi Indonesia 2045 (Hilirisasi), menyelaraskan jalur G2G dengan penempatan modal swasta.",
+        "p4_title": "Logistik Berbasis AI",
+        "p4_desc": "Menanamkan sistem prediktif dan digital twin untuk mengurangi risiko koridor industri (mis. rantai pasok Mount Isa–Townsville)."
+    },
+    "circle": {
+        "label": "Lingkaran",
+        "title": "Ekosistem Kami",
+        "hub1": "Naarm (Melbourne)",
+        "hub2": "Jakarta",
+        "hub3": "Koridor Indo-Pasifik",
+        "vision_label": "Visi",
+        "vision": "Merancang sistem kekayaan berdaulat bilateral yang menghormati leluhur sambil memajukan pasar abad ke-21.",
+        "mission_label": "Misi",
+        "mission": "Memulai dan melaksanakan mandat di mana kedaulatan masyarakat adat dan modal global bersama-sama merancang nilai jangka panjang."
+    },
+    "bridge": {
+        "label": "Jembatan",
+        "title": "Model Operasi",
+        "phase1_title": "Dengarkan",
+        "phase1_desc": "Keterlibatan mendalam dengan Penjaga Adat, pemimpin komunitas, dan pemangku kepentingan berdaulat untuk memahami tanah, hukum, dan warisan.",
+        "phase2_title": "Selaraskan",
+        "phase2_desc": "Menyusun mandat yang menyelaraskan kerangka kedaulatan Bangsa Pertama dengan persyaratan modal institusional dan koridor kebijakan bilateral.",
+        "phase3_title": "Eksekusi",
+        "phase3_desc": "Mengerahkan modal, teknologi, dan struktur tata kelola yang memberikan nilai antargenerasi di seluruh koridor Australia–Indonesia."
+    },
+    "funnel": {
+        "label": "Hubungi",
+        "question": "Apa visi Anda untuk 300 tahun pertukaran?",
+        "cta": "Mulai Briefing Anda",
+        "calendly": "Briefing Penemuan Awal dengan Direktur",
+        "success_title": "Terima kasih.",
+        "success_desc": "Visi Anda telah diterima. Kami akan menghubungi Anda untuk menjadwalkan Briefing Penemuan Awal dengan Direktur."
+    },
+    "footer": {
+        "au_branch": "Australia (Naarm / Melbourne)",
+        "au_legal": "Nafasz Global Pty Ltd | ACN: [Insert]",
+        "id_branch": "Indonesia (Jakarta)",
+        "id_legal": "Nafasz Global CV | NIB: [Insert]",
+        "compliance": "Konsultansi Strategis & Budaya saja. Tidak memberikan saran produk keuangan.",
+        "copyright": "© 2026 Nafasz Global. Seluruh hak dilindungi."
+    }
+}

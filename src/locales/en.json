@@ -1,0 +1,74 @@
+{
+    "nav": {
+        "language": "EN",
+        "enter": "Enter"
+    },
+    "gate": {
+        "acknowledgement": "We acknowledge the Wurundjeri Woi-wurrung and Bunurong / Boon Wurrung peoples of the Kulin Nation as the Sovereign Custodians of the lands where we work and gather in Naarm (Melbourne). We pay deep respect to their Elders—past and present—and recognise that sovereignty was never ceded.",
+        "acknowledgement2": "We likewise honour the ancestors and the many nations across the Australian and Indonesian archipelagos. We stand in the 300-year legacy of the Yolngu-Macassan trade bridge; a relationship built on kinship and reciprocal exchange.",
+        "acknowledgement3": "Wherever you are joining us from, we invite you to honour the Traditional Custodians of the land beneath your feet.",
+        "welcome": "Welcome to the future of exchange.",
+        "cta": "I Acknowledge & Enter"
+    },
+    "hero": {
+        "headline": "Old Wisdom, New Markets:",
+        "headline2": "Architecting the Future of Exchange.",
+        "subheadline": "A boutique advisory that converges industry leaders, First Nations Sovereignty, and global capital to architect bilateral wealth systems across Australia and Indonesia.",
+        "cta": "Enter The Circle"
+    },
+    "legacy": {
+        "label": "The Legacy",
+        "title": "The 300-Year Bridge",
+        "p1": "We honour the Yolngu people of North-East Arnhem Land. For centuries, they sat in a circle with the Macassans of Sulawesi—building a trade bridge grounded in reciprocity, not extraction.",
+        "p2": "This pre-colonial exchange model informs the operating philosophy of Nafasz Global: stewardship, continuity, and shared prosperity."
+    },
+    "pillars": {
+        "label": "Strategy",
+        "title": "Our Pillars",
+        "p1_title": "Sovereign Equity",
+        "p1_desc": "Transitioning industry from transactional extraction → intergenerational participation.",
+        "p2_title": "Cultural Licence (SLO)",
+        "p2_desc": "Operationalising Social Licence through structured First Nations engagement and consent frameworks.",
+        "p3_title": "The Bilateral Corridor",
+        "p3_desc": "Positioned within IA-CEPA and Indonesia's 2045 vision (Hilirisasi), aligning G2G pathways with private capital deployment.",
+        "p4_title": "AI-Driven Logistics",
+        "p4_desc": "Embedding predictive systems and digital twins to de-risk industrial corridors (e.g. Mount Isa–Townsville supply chain)."
+    },
+    "circle": {
+        "label": "The Circle",
+        "title": "Our Ecosystem",
+        "hub1": "Naarm (Melbourne)",
+        "hub2": "Jakarta",
+        "hub3": "Indo-Pacific Corridor",
+        "vision_label": "Vision",
+        "vision": "To architect bilateral sovereign wealth systems that honour ancestry while advancing 21st-century markets.",
+        "mission_label": "Mission",
+        "mission": "To originate and execute mandates where Indigenous sovereignty and global capital co-design long-term value."
+    },
+    "bridge": {
+        "label": "The Bridge",
+        "title": "Operating Model",
+        "phase1_title": "Listen",
+        "phase1_desc": "Deep engagement with Traditional Custodians, community leaders, and sovereign stakeholders to understand the land, the law, and the legacy.",
+        "phase2_title": "Align",
+        "phase2_desc": "Structuring mandates that align First Nations sovereignty frameworks with institutional capital requirements and bilateral policy corridors.",
+        "phase3_title": "Execute",
+        "phase3_desc": "Deploying capital, technology, and governance structures that deliver intergenerational value across the Australia–Indonesia corridor."
+    },
+    "funnel": {
+        "label": "Connect",
+        "question": "What is your vision for 300 years of exchange?",
+        "cta": "Begin Your Briefing",
+        "calendly": "Initial Discovery Briefing with the Director",
+        "success_title": "Thank you.",
+        "success_desc": "Your vision has been received. We will be in touch to schedule your Initial Discovery Briefing with the Director."
+    },
+    "footer": {
+        "au_branch": "Australia (Naarm / Melbourne)",
+        "au_legal": "Nafasz Global Pty Ltd | ACN: [Insert]",
+        "id_branch": "Indonesia (Jakarta)",
+        "id_legal": "Nafasz Global CV | NIB: [Insert]",
+        "compliance": "Strategic & Cultural Consultancy only. No financial product advice provided.",
+        "copyright": "© 2026 Nafasz Global. All rights reserved."
+    }
+}
