@@ -36,7 +36,10 @@ export function applyTranslations() {
         if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
             el.placeholder = text;
         } else {
+            // Preserve SVG icons if they exist
+            const svg = el.querySelector('svg');
             el.textContent = text;
+            if (svg) el.appendChild(svg);
         }
     });
 

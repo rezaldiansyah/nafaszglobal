@@ -95,7 +95,7 @@
                     resilient industrial consortiums across the Indo-Pacific.
                 </p>
                 <a href="#funnel" class="hero__cta" data-i18n="hero.cta">
-                    Step Into the Circle to Co-Design
+                    Step Into The Circle
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round">
                         <path d="M5 12h14" />
@@ -184,22 +184,77 @@
                     <h2 class="section-title" data-i18n="circle.title">Our Ecosystem</h2>
                 </div>
 
-                <!-- Hub visualization -->
-                <div class="circle__hubs reveal">
-                    <div class="circle__hub">
-                        <div class="circle__hub-dot"></div>
-                        <span class="circle__hub-name" data-i18n="circle.hub1">Naarm (Melbourne)</span>
-                    </div>
-                    <div class="circle__connector"></div>
-                    <div class="circle__hub">
-                        <div class="circle__hub-dot"></div>
-                        <span class="circle__hub-name" data-i18n="circle.hub3">Indo-Pacific Corridor</span>
-                    </div>
-                    <div class="circle__connector"></div>
-                    <div class="circle__hub">
-                        <div class="circle__hub-dot"></div>
-                        <span class="circle__hub-name" data-i18n="circle.hub2">Jakarta</span>
-                    </div>
+                <!-- Interactive Map Container -->
+                <div class="circle__map-container reveal">
+                    <svg class="circle__map" viewBox="0 0 1440 810" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <!-- Glow filters -->
+                            <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                                <feGaussianBlur stdDeviation="5" result="blur" />
+                                <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                            </filter>
+                            <filter id="glow-strong" x="-50%" y="-50%" width="200%" height="200%">
+                                <feGaussianBlur stdDeviation="15" result="blur" />
+                                <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                            </filter>
+                            <!-- Gradients -->
+                            <linearGradient id="arc-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <feStop offset="0%" stop-color="#B35900" stop-opacity="0.4" />
+                                <feStop offset="50%" stop-color="#E8A050" stop-opacity="1" />
+                                <feStop offset="100%" stop-color="#B35900" stop-opacity="0.4" />
+                            </linearGradient>
+                        </defs>
+
+                        <!-- Background Map PNG (wrapped in SVG) -->
+                        <image href="/maps-indo-australia.svg" x="0" y="0" width="1440" height="810" />
+
+                        <!-- Connecting Arc: Jakarta → Melbourne -->
+                        <path class="circle__arc circle__arc--bg" d="M 370,230 Q 690,110 930,720" fill="none"
+                            stroke="rgba(179,89,0,0.2)" stroke-width="3" />
+                        <path class="circle__arc circle__arc--main" d="M 370,230 Q 690,110 930,720" fill="none"
+                            stroke="url(#arc-gradient)" stroke-width="4" stroke-dasharray="12,10" />
+                        <path class="circle__arc circle__arc--pulse" d="M 370,230 Q 690,110 930,720" fill="none"
+                            stroke="#E8A050" stroke-width="6" stroke-dasharray="80,1000" stroke-dashoffset="0" />
+
+                        <!-- INDO-PACIFIC CORRIDOR Label -->
+                        <g class="circle__corridor-label" transform="translate(750, 130)">
+                            <rect x="-154" y="-33" width="308" height="66" rx="33" fill="rgba(20,20,20,0.85)"
+                                stroke="#B35900" stroke-width="2" class="circle__label-rect" />
+                            <text x="0" y="8" text-anchor="middle" font-family="Outfit, sans-serif" font-size="20"
+                                font-weight="700" letter-spacing="4" fill="#fff" data-i18n="circle.hub3">INDO-PACIFIC
+                                CORRIDOR</text>
+                        </g>
+
+                        <!-- JAKARTA -->
+                        <g class="circle__location circle__location--jakarta" data-city="jakarta">
+                            <circle cx="370" cy="230" r="30" fill="none" stroke="rgba(232,160,80,0.4)" stroke-width="1"
+                                class="circle__pulse-ring" />
+                            <circle cx="370" cy="230" r="10" fill="#E8A050" filter="url(#glow)" class="circle__dot" />
+                            <circle cx="370" cy="230" r="4" fill="#fff" opacity="0.9" />
+                            <g class="circle__label" transform="translate(370, 190)">
+                                <text x="0" y="0" text-anchor="middle" font-family="Outfit, sans-serif" font-size="20"
+                                    font-weight="700" letter-spacing="2" fill="#E8A050"
+                                    data-i18n="circle.hub2">JAKARTA</text>
+                                <text x="0" y="24" text-anchor="middle" font-family="Outfit, sans-serif" font-size="14"
+                                    fill="#aaa">Indonesia</text>
+                            </g>
+                        </g>
+
+                        <!-- MELBOURNE -->
+                        <g class="circle__location circle__location--melbourne" data-city="melbourne">
+                            <circle cx="930" cy="720" r="35" fill="none" stroke="rgba(232,160,80,0.4)" stroke-width="1"
+                                class="circle__pulse-ring" />
+                            <circle cx="930" cy="720" r="12" fill="#E8A050" filter="url(#glow)" class="circle__dot" />
+                            <circle cx="930" cy="720" r="5" fill="#fff" opacity="0.9" />
+                            <g class="circle__label" transform="translate(930, 760)">
+                                <text x="0" y="0" text-anchor="middle" font-family="Outfit, sans-serif" font-size="20"
+                                    font-weight="700" letter-spacing="2" fill="#E8A050" data-i18n="circle.hub1">NAARM
+                                    (MELBOURNE)</text>
+                                <text x="0" y="24" text-anchor="middle" font-family="Outfit, sans-serif" font-size="14"
+                                    fill="#aaa">Australia</text>
+                            </g>
+                        </g>
+                    </svg>
                 </div>
 
                 <!-- Vision & Mission -->
@@ -315,13 +370,17 @@
                 <!-- Australia Branch -->
                 <div class="footer__branch">
                     <span class="footer__branch-label" data-i18n="footer.au_branch">Australia (Naarm / Melbourne)</span>
-                    <p class="footer__branch-legal" data-i18n="footer.au_legal">Nafasz Global Pty Ltd | ACN: [Insert]
+                    <p class="footer__branch-legal" data-i18n="footer.au_legal">
+                        Nafasz Global Pty Ltd | ACN: 669 029 458<br>
+                        Level 15, 28 Freshwater Place, Southbank
                     </p>
                 </div>
                 <!-- Indonesia Branch -->
                 <div class="footer__branch">
                     <span class="footer__branch-label" data-i18n="footer.id_branch">Indonesia (Jakarta)</span>
-                    <p class="footer__branch-legal" data-i18n="footer.id_legal">Nafasz Global CV | NIB: [Insert]</p>
+                    <p class="footer__branch-legal" data-i18n="footer.id_legal">
+                        CV Nafasz Global | NIB: 3108250050372
+                    </p>
                 </div>
             </div>
 

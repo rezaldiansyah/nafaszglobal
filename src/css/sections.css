@@ -402,50 +402,111 @@
     text-align: center;
 }
 
-.circle__hubs {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: var(--space-lg);
-    margin: var(--space-2xl) 0;
-    flex-wrap: wrap;
-}
-
-.circle__hub {
+/* Interactive Map */
+.circle__map-container {
+    max-width: 1000px;
+    margin: var(--space-xl) auto;
     position: relative;
-    padding: var(--space-lg);
-    text-align: center;
+    aspect-ratio: 1440 / 810;
 }
 
-.circle__hub-dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: var(--color-ochre);
-    margin: 0 auto var(--space-sm);
-    box-shadow: 0 0 20px rgba(179, 89, 0, 0.3);
+.circle__map {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
-.circle__hub-name {
-    font-family: var(--font-body);
-    font-size: var(--text-sm);
-    font-weight: var(--weight-semibold);
-    letter-spacing: var(--tracking-wider);
-    text-transform: uppercase;
-    color: var(--color-white);
+/* Pulse ring animation on dots */
+.circle__pulse-ring {
+    animation: mapPulse 4s var(--ease-smooth) infinite;
+    transform-origin: center;
 }
 
-.circle__connector {
-    width: 60px;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--color-ochre), transparent);
+.circle__pulse-ring--delay {
+    animation-delay: 2s;
 }
 
+@keyframes mapPulse {
+    0% {
+        opacity: 0.6;
+        transform: scale(0.8);
+    }
+
+    50% {
+        opacity: 0;
+        transform: scale(1.8);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(1.8);
+    }
+}
+
+/* Animated arc pulse */
+.circle__arc--pulse {
+    animation: arcFlow 6s linear infinite;
+}
+
+@keyframes arcFlow {
+    0% {
+        stroke-dashoffset: 1000;
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+/* Location hover effects */
+.circle__location {
+    cursor: pointer;
+    transition: transform var(--duration-fast) var(--ease-smooth);
+}
+
+.circle__location:hover {
+    transform: scale(1.05);
+}
+
+.circle__location:hover .circle__dot {
+    r: 15;
+}
+
+.circle__location:hover .circle__label text {
+    fill: #fff;
+}
+
+/* Corridor label */
+.circle__corridor-label {
+    opacity: 0.9;
+    transition: opacity var(--duration-fast) var(--ease-smooth);
+}
+
+.circle__map:hover .circle__corridor-label {
+    opacity: 1;
+}
+
+.circle__label-rect {
+    stroke-dasharray: 15, 10;
+    animation: labelFlow 6s linear infinite;
+}
+
+@keyframes labelFlow {
+    from {
+        stroke-dashoffset: 200;
+    }
+
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+/* Vision & Mission */
 .circle__statements {
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--space-xl);
-    margin-top: var(--space-2xl);
+    margin-top: var(--space-3xl);
     text-align: left;
 }
 
