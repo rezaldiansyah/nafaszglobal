@@ -6,10 +6,740 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex" />
     <title>Nafasz Global — Content Manager</title>
-    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;1,300&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet" />
+    <style>
+        /* ============================================================
+           NAFASZ GLOBAL — CUSTOM CMS BRANDING & UI
+           ============================================================ */
+
+        /* ---------- LOGIN PAGE ---------- */
+
+        /* Dark background for login page */
+        section[class*="StyledAuthenticationPage"],
+        section[class*="AuthenticationPage"] {
+            background: #1A1A1A !important;
+        }
+
+        /* Hide the default Decap SVG logo */
+        span[class*="DecapLogoIcon"],
+        span[class*="LogoIcon"],
+        [class*="CustomLogoIcon"] {
+            display: none !important;
+        }
+
+        /* Style the login button */
+        button[class*="LoginButton"],
+        [class*="LoginButton"] {
+            background: #B35900 !important;
+            color: #fff !important;
+            border: none !important;
+            border-radius: 6px !important;
+            font-family: 'Inter', sans-serif !important;
+            font-weight: 600 !important;
+            letter-spacing: 2px !important;
+            padding: 16px 56px !important;
+            font-size: 13px !important;
+            text-transform: uppercase !important;
+            transition: all 0.3s ease !important;
+            cursor: pointer !important;
+            box-shadow: 0 4px 15px rgba(179, 89, 0, 0.2) !important;
+        }
+
+        button[class*="LoginButton"]:hover,
+        [class*="LoginButton"]:hover {
+            background: #cc6600 !important;
+            transform: translateY(-2px) !important;
+            box-shadow: 0 8px 30px rgba(179, 89, 0, 0.4) !important;
+        }
+
+        /* Custom branding container */
+        .nafasz-cms-branding {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .nafasz-cms-branding__logo-wrapper {
+            display: inline-block;
+            width: 200px;
+            margin-bottom: 24px;
+            background: #F5F5F5;
+            border-radius: 12px;
+            padding: 16px 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .nafasz-cms-branding__logo-wrapper img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .nafasz-cms-branding h1 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 20px;
+            font-weight: 300;
+            color: rgba(245, 245, 245, 0.7);
+            margin: 0 0 6px 0;
+            letter-spacing: 2px;
+        }
+
+        .nafasz-cms-branding h2 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 34px;
+            font-weight: 500;
+            color: #B35900;
+            margin: 0 0 10px 0;
+            letter-spacing: 3px;
+        }
+
+        .nafasz-cms-branding p {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            color: rgba(245, 245, 245, 0.35);
+            margin: 0;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* ---------- DASHBOARD UI IMPROVEMENTS ---------- */
+
+        /* Top nav bar */
+        [class*="AppHeader"] header,
+        header[class*="AppHeader"],
+        nav[class*="AppHeader"] {
+            background: #1A1A1A !important;
+            border-bottom: 1px solid rgba(179, 89, 0, 0.3) !important;
+        }
+
+        /* "Contents" and "Media" nav links */
+        [class*="AppHeader"] a,
+        header a[class*="NavLink"] {
+            color: rgba(255, 255, 255, 0.7) !important;
+            font-family: 'Inter', sans-serif !important;
+        }
+
+        [class*="AppHeader"] a:hover,
+        header a[class*="NavLink"]:hover {
+            color: #B35900 !important;
+        }
+
+        /* Sidebar */
+        aside[class*="Sidebar"],
+        div[class*="Sidebar"],
+        [class*="SidebarNavList"] {
+            background: #f8f6f3 !important;
+            border-right: 1px solid #e8e0d4 !important;
+        }
+
+        /* Collection header area */
+        [class*="CollectionTop"] {
+            background: #faf8f5 !important;
+        }
+
+        /* Make "New Page" button match branding */
+        a[class*="TopNewButton"],
+        [class*="TopNewButton"] {
+            background: #B35900 !important;
+            color: #fff !important;
+            border: none !important;
+            border-radius: 6px !important;
+            font-family: 'Inter', sans-serif !important;
+            font-weight: 600 !important;
+            letter-spacing: 1px !important;
+        }
+
+        a[class*="TopNewButton"]:hover,
+        [class*="TopNewButton"]:hover {
+            background: #cc6600 !important;
+        }
+
+        /* Entry list items */
+        [class*="ListCard"],
+        [class*="ListCardLink"] {
+            border-radius: 8px !important;
+            transition: all 0.2s ease !important;
+        }
+
+        [class*="ListCard"]:hover,
+        [class*="ListCardLink"]:hover {
+            box-shadow: 0 2px 12px rgba(179, 89, 0, 0.1) !important;
+            border-color: rgba(179, 89, 0, 0.3) !important;
+        }
+
+        /* Save/Publish button in editor */
+        [class*="ToolbarButton"],
+        div[class*="PublishButton"] button {
+            font-family: 'Inter', sans-serif !important;
+        }
+
+        /* Editor toolbar */
+        [class*="EditorToolbar"] {
+            background: #1A1A1A !important;
+            border-bottom: 1px solid rgba(179, 89, 0, 0.2) !important;
+        }
+
+        /* Back button in editor */
+        [class*="BackArrow"],
+        a[class*="BackArrow"] {
+            color: #B35900 !important;
+        }
+
+        /* Form field labels - make them clearer */
+        label[class*="ControlLabel"],
+        [class*="ControlLabel"] {
+            font-family: 'Inter', sans-serif !important;
+            font-weight: 600 !important;
+            font-size: 13px !important;
+            color: #333 !important;
+            letter-spacing: 0.5px !important;
+            text-transform: uppercase !important;
+            margin-bottom: 6px !important;
+        }
+
+        /* Input fields styling */
+        input[class*="StyledInput"],
+        [class*="ControlInput"] input,
+        [class*="ControlInput"] textarea {
+            border-radius: 6px !important;
+            border: 1.5px solid #ddd !important;
+            padding: 10px 14px !important;
+            font-family: 'Inter', sans-serif !important;
+            font-size: 14px !important;
+            transition: border-color 0.2s ease !important;
+        }
+
+        input[class*="StyledInput"]:focus,
+        [class*="ControlInput"] input:focus,
+        [class*="ControlInput"] textarea:focus {
+            border-color: #B35900 !important;
+            box-shadow: 0 0 0 3px rgba(179, 89, 0, 0.1) !important;
+            outline: none !important;
+        }
+
+        /* Textarea (for bigger text fields) */
+        textarea {
+            border-radius: 6px !important;
+            border: 1.5px solid #ddd !important;
+            font-family: 'Inter', sans-serif !important;
+            font-size: 14px !important;
+            line-height: 1.6 !important;
+            min-height: 100px !important;
+        }
+
+        textarea:focus {
+            border-color: #B35900 !important;
+            box-shadow: 0 0 0 3px rgba(179, 89, 0, 0.1) !important;
+            outline: none !important;
+        }
+
+        /* Object widget (grouped fields) */
+        [class*="ObjectWidgetTopBar"] {
+            background: #f8f6f3 !important;
+            border-radius: 8px 8px 0 0 !important;
+            border-color: #e8e0d4 !important;
+        }
+
+        /* Toggle/boolean widget */
+        [class*="ToggleBackground"][class*="isActive"] {
+            background: #B35900 !important;
+        }
+
+        /* Markdown editor toolbar */
+        [class*="EditorControlBar"] {
+            background: #f8f6f3 !important;
+            border-radius: 8px 8px 0 0 !important;
+        }
+
+        /* Quick add button */
+        [class*="QuickAddButton"] {
+            background: #B35900 !important;
+            border: none !important;
+            border-radius: 6px !important;
+        }
+
+        /* Scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #B35900;
+        }
+
+        /* Help text under fields */
+        [class*="ControlHint"] {
+            font-family: 'Inter', sans-serif !important;
+            font-size: 12px !important;
+            color: #888 !important;
+            font-style: italic !important;
+        }
+    </style>
 </head>
 
 <body>
+    <!-- Decap CMS will mount here -->
+    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+
+    <script>
+        // ===== Custom Branding Injection =====
+        function injectBranding() {
+            const loginSection = document.querySelector(
+                'section[class*="StyledAuthenticationPage"], section[class*="AuthenticationPage"]'
+            );
+            if (!loginSection) return false;
+            if (loginSection.querySelector('.nafasz-cms-branding')) return true;
+
+            // Hide default Decap logo
+            const logos = loginSection.querySelectorAll(
+                'span[class*="DecapLogoIcon"], span[class*="LogoIcon"], [class*="CustomLogoIcon"]'
+            );
+            logos.forEach(el => { el.style.display = 'none'; });
+
+            // Find login button
+            const loginButton = loginSection.querySelector(
+                'button[class*="LoginButton"], [class*="LoginButton"]'
+            );
+
+            // Create branding
+            const branding = document.createElement('div');
+            branding.className = 'nafasz-cms-branding';
+            branding.innerHTML = `
+                <div class="nafasz-cms-branding__logo-wrapper">
+                    <img src="/logo.png" alt="Nafasz Global" />
+                </div>
+                <h1>Welcome to the CMS of</h1>
+                <h2>Nafasz Global</h2>
+                <p>Sovereign Trust Portal · Content Manager</p>
+            `;
+
+            // Insert before login button
+            if (loginButton && loginButton.parentElement) {
+                loginButton.parentElement.insertBefore(branding, loginButton);
+            } else {
+                const inner = loginSection.querySelector(':scope > div') || loginSection;
+                inner.insertBefore(branding, inner.firstChild);
+            }
+
+            return true;
+        }
+
+        // MutationObserver to catch Decap CMS render
+        let brandingApplied = false;
+        const observer = new MutationObserver(() => {
+            if (!brandingApplied) {
+                brandingApplied = injectBranding();
+            }
+        });
+
+        if (document.body) {
+            observer.observe(document.body, { childList: true, subtree: true });
+        } else {
+            document.addEventListener('DOMContentLoaded', () => {
+                observer.observe(document.body, { childList: true, subtree: true });
+            });
+        }
+
+        [500, 1000, 2000, 3000, 5000].forEach(delay => {
+            setTimeout(() => {
+                if (!brandingApplied) brandingApplied = injectBranding();
+            }, delay);
+        });
+    </script>
+
+    <!-- ===== CMS PREVIEW TEMPLATES ===== -->
+    <script>
+        // Wait for CMS to be ready, then register preview templates
+        const waitForCMS = setInterval(() => {
+            if (typeof CMS !== 'undefined' && CMS.registerPreviewTemplate) {
+                clearInterval(waitForCMS);
+                registerPreviews();
+            }
+        }, 500);
+
+        function registerPreviews() {
+            // Register preview style (inject website fonts)
+            CMS.registerPreviewStyle(
+                'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=Inter:wght@300;400;600&display=swap'
+            );
+
+            // Inject custom preview CSS
+            CMS.registerPreviewStyle(`
+                /* ===== NAFASZ GLOBAL PREVIEW STYLES ===== */
+                body {
+                    margin: 0;
+                    padding: 0;
+                    font-family: 'Inter', sans-serif;
+                    background: #121212;
+                    color: #f5f5f5;
+                    -webkit-font-smoothing: antialiased;
+                }
+
+                .preview {
+                    max-width: 100%;
+                    overflow-x: hidden;
+                }
+
+                .preview__section {
+                    padding: 40px 32px;
+                    border-bottom: 1px solid rgba(179, 89, 0, 0.15);
+                    position: relative;
+                }
+
+                .preview__section:nth-child(even) {
+                    background: #1a1a1a;
+                }
+
+                .preview__section-badge {
+                    display: inline-block;
+                    font-family: 'Inter', sans-serif;
+                    font-size: 10px;
+                    font-weight: 600;
+                    letter-spacing: 2px;
+                    text-transform: uppercase;
+                    color: #B35900;
+                    background: rgba(179, 89, 0, 0.1);
+                    padding: 4px 12px;
+                    border-radius: 4px;
+                    margin-bottom: 16px;
+                    border: 1px solid rgba(179, 89, 0, 0.2);
+                }
+
+                .preview__label {
+                    font-family: 'Inter', sans-serif;
+                    font-size: 11px;
+                    font-weight: 600;
+                    letter-spacing: 3px;
+                    text-transform: uppercase;
+                    color: #B35900;
+                    margin-bottom: 8px;
+                }
+
+                .preview__title {
+                    font-family: 'Cormorant Garamond', Georgia, serif;
+                    font-size: 28px;
+                    font-weight: 300;
+                    color: #f5f5f5;
+                    line-height: 1.2;
+                    margin: 0 0 12px 0;
+                }
+
+                .preview__headline {
+                    font-family: 'Cormorant Garamond', Georgia, serif;
+                    font-size: 42px;
+                    font-weight: 300;
+                    color: #f5f5f5;
+                    line-height: 1.1;
+                    margin: 0 0 8px 0;
+                }
+
+                .preview__headline em {
+                    font-style: italic;
+                    color: #B35900;
+                }
+
+                .preview__text {
+                    font-family: 'Inter', sans-serif;
+                    font-size: 15px;
+                    font-weight: 300;
+                    line-height: 1.7;
+                    color: rgba(245, 245, 245, 0.7);
+                    margin: 0 0 12px 0;
+                    max-width: 600px;
+                }
+
+                .preview__text--italic {
+                    font-family: 'Cormorant Garamond', Georgia, serif;
+                    font-size: 20px;
+                    font-style: italic;
+                    color: #f5f5f5;
+                    line-height: 1.4;
+                }
+
+                .preview__btn {
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 8px;
+                    font-family: 'Inter', sans-serif;
+                    font-size: 12px;
+                    font-weight: 600;
+                    letter-spacing: 2px;
+                    text-transform: uppercase;
+                    color: #f5f5f5;
+                    background: transparent;
+                    padding: 12px 24px;
+                    border: 1px solid #B35900;
+                    border-radius: 4px;
+                    margin-top: 12px;
+                }
+
+                .preview__pillars {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 12px;
+                    margin-top: 16px;
+                }
+
+                .preview__pillar {
+                    padding: 16px;
+                    background: rgba(255, 255, 255, 0.02);
+                    border: 1px solid rgba(245, 245, 245, 0.08);
+                    border-radius: 8px;
+                    border-left: 3px solid #B35900;
+                }
+
+                .preview__pillar-num {
+                    font-family: 'Cormorant Garamond', Georgia, serif;
+                    font-size: 24px;
+                    font-weight: 300;
+                    color: #B35900;
+                    margin-bottom: 4px;
+                }
+
+                .preview__pillar-title {
+                    font-family: 'Cormorant Garamond', Georgia, serif;
+                    font-size: 16px;
+                    font-weight: 500;
+                    color: #f5f5f5;
+                    margin-bottom: 6px;
+                }
+
+                .preview__pillar-desc {
+                    font-family: 'Inter', sans-serif;
+                    font-size: 12px;
+                    color: rgba(245, 245, 245, 0.6);
+                    line-height: 1.5;
+                }
+
+                .preview__phases {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr;
+                    gap: 16px;
+                    margin-top: 16px;
+                }
+
+                .preview__phase {
+                    text-align: center;
+                    padding: 16px;
+                }
+
+                .preview__phase-num {
+                    width: 36px;
+                    height: 36px;
+                    border-radius: 50%;
+                    border: 1px solid #B35900;
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-family: 'Cormorant Garamond', Georgia, serif;
+                    font-size: 18px;
+                    color: #B35900;
+                    margin-bottom: 10px;
+                }
+
+                .preview__phase-title {
+                    font-family: 'Cormorant Garamond', Georgia, serif;
+                    font-size: 18px;
+                    font-weight: 500;
+                    color: #f5f5f5;
+                    margin-bottom: 6px;
+                }
+
+                .preview__phase-desc {
+                    font-family: 'Inter', sans-serif;
+                    font-size: 12px;
+                    color: rgba(245, 245, 245, 0.6);
+                    line-height: 1.5;
+                }
+
+                .preview__statements {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 20px;
+                    margin-top: 16px;
+                }
+
+                .preview__statement {
+                    padding-left: 16px;
+                    border-left: 2px solid #B35900;
+                }
+
+                .preview__footer {
+                    background: #0e0e0e;
+                    padding: 32px;
+                }
+
+                .preview__footer-grid {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 20px;
+                    margin-bottom: 16px;
+                }
+
+                .preview__footer-branch {
+                    font-size: 12px;
+                }
+
+                .preview__footer-label {
+                    font-size: 10px;
+                    font-weight: 600;
+                    letter-spacing: 3px;
+                    text-transform: uppercase;
+                    color: #B35900;
+                    margin-bottom: 4px;
+                }
+
+                .preview__footer-legal {
+                    color: rgba(245, 245, 245, 0.5);
+                    line-height: 1.5;
+                }
+
+                .preview__footer-compliance {
+                    text-align: center;
+                    font-size: 11px;
+                    color: rgba(245, 245, 245, 0.3);
+                    padding-top: 16px;
+                    border-top: 1px solid rgba(245, 245, 245, 0.05);
+                }
+
+                .preview__footer-copyright {
+                    text-align: center;
+                    font-size: 11px;
+                    color: rgba(245, 245, 245, 0.3);
+                    margin-top: 8px;
+                }
+
+                .preview__divider {
+                    width: 60px;
+                    height: 1px;
+                    background: #B35900;
+                    margin: 16px 0;
+                }
+            `, { raw: true });
+
+            // ===== SITE CONTENT PREVIEW (English) =====
+            CMS.registerPreviewTemplate('content-en', createSitePreview);
+            CMS.registerPreviewTemplate('content-id', createSitePreview);
+        }
+
+        function createSitePreview(props) {
+            const entry = props.entry;
+            const d = (key) => entry.getIn(['data', ...key.split('.')]) || '';
+            const h = window.h || props.h || CMS.h;
+
+            return h('div', { className: 'preview' },
+                // ─── HERO SECTION ───
+                h('div', { className: 'preview__section', style: { background: '#121212 url(/hero-texture.jpg) center/cover', minHeight: '200px' } },
+                    h('div', { className: 'preview__section-badge' }, '🏠 HERO SECTION'),
+                    h('div', { className: 'preview__headline' },
+                        d('hero.headline'), ' ',
+                        h('em', {}, d('hero.headline2'))
+                    ),
+                    h('p', { className: 'preview__text' }, d('hero.subheadline')),
+                    h('div', { className: 'preview__btn' }, d('hero.cta'), ' →')
+                ),
+
+                // ─── LEGACY SECTION ───
+                h('div', { className: 'preview__section' },
+                    h('div', { className: 'preview__section-badge' }, '📜 THE LEGACY'),
+                    h('div', { className: 'preview__label' }, d('legacy.label')),
+                    h('h2', { className: 'preview__title' }, d('legacy.title')),
+                    h('div', { className: 'preview__divider' }),
+                    h('p', { className: 'preview__text' }, d('legacy.p1')),
+                    h('p', { className: 'preview__text preview__text--italic' }, d('legacy.p2'))
+                ),
+
+                // ─── STRATEGY PILLARS ───
+                h('div', { className: 'preview__section' },
+                    h('div', { className: 'preview__section-badge' }, '🏛️ STRATEGY PILLARS'),
+                    h('div', { className: 'preview__label' }, d('pillars.label')),
+                    h('h2', { className: 'preview__title' }, d('pillars.title')),
+                    h('div', { className: 'preview__pillars' },
+                        [1, 2, 3, 4].map(i =>
+                            h('div', { className: 'preview__pillar', key: i },
+                                h('div', { className: 'preview__pillar-num' }, '0' + i),
+                                h('div', { className: 'preview__pillar-title' }, d('pillars.p' + i + '_title')),
+                                h('div', { className: 'preview__pillar-desc' }, d('pillars.p' + i + '_desc'))
+                            )
+                        )
+                    )
+                ),
+
+                // ─── THE CIRCLE (VISION & MISSION) ───
+                h('div', { className: 'preview__section' },
+                    h('div', { className: 'preview__section-badge' }, '🌏 THE CIRCLE'),
+                    h('div', { className: 'preview__label' }, d('circle.label')),
+                    h('h2', { className: 'preview__title' }, d('circle.title')),
+                    h('div', { className: 'preview__statements' },
+                        h('div', { className: 'preview__statement' },
+                            h('div', { className: 'preview__label' }, d('circle.vision_label')),
+                            h('p', { className: 'preview__text preview__text--italic' }, d('circle.vision'))
+                        ),
+                        h('div', { className: 'preview__statement' },
+                            h('div', { className: 'preview__label' }, d('circle.mission_label')),
+                            h('p', { className: 'preview__text preview__text--italic' }, d('circle.mission'))
+                        )
+                    )
+                ),
+
+                // ─── THE BRIDGE (OPERATING MODEL) ───
+                h('div', { className: 'preview__section' },
+                    h('div', { className: 'preview__section-badge' }, '🌉 THE BRIDGE'),
+                    h('div', { className: 'preview__label' }, d('bridge.label')),
+                    h('h2', { className: 'preview__title' }, d('bridge.title')),
+                    h('div', { className: 'preview__phases' },
+                        [1, 2, 3].map(i =>
+                            h('div', { className: 'preview__phase', key: i },
+                                h('div', { className: 'preview__phase-num' }, i),
+                                h('div', { className: 'preview__phase-title' }, d('bridge.phase' + i + '_title')),
+                                h('div', { className: 'preview__phase-desc' }, d('bridge.phase' + i + '_desc'))
+                            )
+                        )
+                    )
+                ),
+
+                // ─── CONTACT / FUNNEL ───
+                h('div', { className: 'preview__section' },
+                    h('div', { className: 'preview__section-badge' }, '📩 CONTACT FORM'),
+                    h('div', { className: 'preview__label' }, d('funnel.label')),
+                    h('p', { className: 'preview__text preview__text--italic', style: { textAlign: 'center', maxWidth: '100%' } }, d('funnel.question')),
+                    h('div', { style: { textAlign: 'center', marginTop: '16px' } },
+                        h('div', { className: 'preview__btn' }, d('funnel.cta'), ' →')
+                    )
+                ),
+
+                // ─── FOOTER ───
+                h('div', { className: 'preview__footer' },
+                    h('div', { className: 'preview__section-badge' }, '📋 FOOTER'),
+                    h('div', { className: 'preview__footer-grid' },
+                        h('div', { className: 'preview__footer-branch' },
+                            h('div', { className: 'preview__footer-label' }, d('footer.au_branch')),
+                            h('div', { className: 'preview__footer-legal' }, d('footer.au_legal'))
+                        ),
+                        h('div', { className: 'preview__footer-branch' },
+                            h('div', { className: 'preview__footer-label' }, d('footer.id_branch')),
+                            h('div', { className: 'preview__footer-legal' }, d('footer.id_legal'))
+                        )
+                    ),
+                    h('div', { className: 'preview__footer-compliance' }, d('footer.compliance')),
+                    h('div', { className: 'preview__footer-copyright' }, d('footer.copyright'))
+                )
+            );
+        }
+    </script>
 </body>
 
 </html>

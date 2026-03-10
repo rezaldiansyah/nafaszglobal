@@ -24,13 +24,33 @@ const LOCALES_DIR = path.join(ROOT, 'src/locales');
 
 /**
  * Simple frontmatter parser (no external deps needed)
+ * Handles two formats:
+ *   1. Standard: --- delimited with separate body
+ *   2. CMS format: Body embedded as YAML multiline scalar (no closing ---)
  */
 function parseFrontmatter(content) {
-    const match = content.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
-    if (!match) return { data: {}, body: content };
+    // Try standard frontmatter first (--- ... --- body)
+    const standardMatch = content.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
+    if (standardMatch) {
+        return { data: parseYamlBlock(standardMatch[1]), body: standardMatch[2].trim() };
+    }
 
+    // CMS format: everything after opening --- is YAML (including body: >-)
+    const cmsMatch = content.match(/^---\n([\s\S]+)$/);
+    if (cmsMatch) {
+        return { data: parseYamlBlock(cmsMatch[1]), body: '' };
+    }
+
+    return { data: {}, body: content };
+}
+
+/**
+ * Parse a YAML block into key-value pairs
+ * Handles: strings, booleans, numbers, quoted strings, multiline scalars (>-)
+ */
+function parseYamlBlock(yamlStr) {
     const frontmatter = {};
-    const lines = match[1].split('\n');
+    const lines = yamlStr.split('\n');
     let currentKey = null;
     let currentValue = '';
     let inMultiline = false;
@@ -41,12 +61,12 @@ function parseFrontmatter(content) {
                 frontmatter[currentKey] = currentValue.trim();
                 inMultiline = false;
             } else {
-                currentValue += line.replace(/^\s{2}/, '') + '\n';
+                currentValue += line.replace(/^ {2}/, '') + '\n';
                 continue;
             }
         }
 
-        const keyMatch = line.match(/^(\w+):\s*(.*)$/);
+        const keyMatch = line.match(/^([\w]+):\s*(.*)$/);
         if (keyMatch) {
             currentKey = keyMatch[1];
             const val = keyMatch[2].trim();
@@ -59,6 +79,8 @@ function parseFrontmatter(content) {
                 frontmatter[currentKey] = true;
             } else if (val === 'false') {
                 frontmatter[currentKey] = false;
+            } else if (/^\d+$/.test(val)) {
+                frontmatter[currentKey] = parseInt(val, 10);
             } else {
                 frontmatter[currentKey] = val;
             }
@@ -68,7 +90,7 @@ function parseFrontmatter(content) {
         frontmatter[currentKey] = currentValue.trim();
     }
 
-    return { data: frontmatter, body: match[2].trim() };
+    return frontmatter;
 }
 
 /**
@@ -273,6 +295,7 @@ function build() {
     }
 
     let generated = 0;
+    const menuItems = [];
 
     for (const file of files) {
         const raw = fs.readFileSync(path.join(CONTENT_DIR, file), 'utf-8');
@@ -298,7 +321,42 @@ function build() {
         fs.writeFileSync(path.join(pageDir, 'index.html'), pageHtml, 'utf-8');
         generated++;
         console.log(`   ✅ Generated: /${slug}/`);
+
+        // Collect menu items
+        if (data.show_in_menu === true) {
+            menuItems.push({
+                title: data.title || slug,
+                title_id: data.title_id || data.title || slug,
+                slug: slug,
+                order: parseInt(data.menu_order) || 10,
+            });
+        }
     }
+
+    // ============================================================
+    // GENERATE MENU DATA
+    // ============================================================
+    console.log('🍔 Building menu data...');
+
+    // Read global settings
+    const settingsPath = path.join(ROOT, 'src/content/settings.json');
+    let settings = { menu_enabled: false };
+    if (fs.existsSync(settingsPath)) {
+        settings = JSON.parse(fs.readFileSync(settingsPath, 'utf-8'));
+    }
+
+    // Sort menu items by order
+    menuItems.sort((a, b) => a.order - b.order);
+
+    const menuData = {
+        enabled: settings.menu_enabled === true,
+        items: menuItems,
+    };
+
+    // Write menu data to public directory (accessible at /menu-data.json)
+    const menuDataPath = path.join(ROOT, 'public/menu-data.json');
+    fs.writeFileSync(menuDataPath, JSON.stringify(menuData, null, 2), 'utf-8');
+    console.log(`   🍔 Menu: ${menuData.enabled ? 'ENABLED' : 'DISABLED'}, ${menuItems.length} item(s)`);
 
     console.log(`📄 Done! Generated ${generated} page(s).`);
 }

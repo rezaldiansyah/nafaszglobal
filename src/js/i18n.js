@@ -5,6 +5,7 @@
 
 import en from '../locales/en.json';
 import id from '../locales/id.json';
+import { updateMenuLanguage } from './menu.js';
 
 const translations = { en, id };
 let currentLang = localStorage.getItem('nafasz-lang') || 'en';
@@ -65,6 +66,7 @@ export function setLanguage(lang) {
         currentLang = lang;
         localStorage.setItem('nafasz-lang', lang);
         applyTranslations();
+        updateMenuLanguage(lang);
     }
 }
 

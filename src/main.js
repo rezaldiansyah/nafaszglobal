@@ -13,6 +13,7 @@ import { initI18n } from './js/i18n.js';
 import { initAnimations } from './js/animations.js';
 import { initPillars } from './js/pillars.js';
 import { initForm } from './js/form.js';
+import { initMenu } from './js/menu.js';
 
 // Initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
@@ -21,4 +22,5 @@ document.addEventListener('DOMContentLoaded', () => {
     initAnimations();
     initPillars();
     initForm();
+    initMenu();
 });

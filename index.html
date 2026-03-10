@@ -43,9 +43,39 @@
                     <span style="color: var(--color-white-muted);">|</span>
                     <button class="nav__lang-btn" data-lang="id">ID</button>
                 </div>
+                <!-- Hamburger menu button (hidden until menu is enabled) -->
+                <button class="nav__hamburger" id="hamburger-btn" aria-label="Open Menu" style="display:none;">
+                    <span class="nav__hamburger-line"></span>
+                    <span class="nav__hamburger-line"></span>
+                    <span class="nav__hamburger-line"></span>
+                </button>
             </div>
         </div>
     </nav>
+
+    <!-- ========== SLIDE-OUT MENU OVERLAY ========== -->
+    <div class="menu-overlay" id="menu-overlay" aria-hidden="true">
+        <div class="menu-overlay__backdrop" id="menu-backdrop"></div>
+        <div class="menu-overlay__panel">
+            <div class="menu-overlay__header">
+                <img src="/logo.png" alt="Nafasz Global" class="menu-overlay__logo" />
+                <button class="menu-overlay__close" id="menu-close-btn" aria-label="Close Menu">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18" />
+                        <line x1="6" y1="6" x2="18" y2="18" />
+                    </svg>
+                </button>
+            </div>
+            <nav class="menu-overlay__nav" id="menu-nav">
+                <!-- Menu items will be injected here by JS -->
+                <div class="menu-overlay__loading">Loading...</div>
+            </nav>
+            <div class="menu-overlay__footer">
+                <p>Nafasz Global</p>
+                <span>Sovereign Trust Portal</span>
+            </div>
+        </div>
+    </div>
 
     <!-- ========== CULTURAL GATE (Pre-site Modal) ========== -->
     <div class="cultural-gate" id="cultural-gate" role="dialog" aria-modal="true"
@@ -159,8 +189,9 @@
                         <span class="pillar-card__number">03</span>
                         <h3 class="pillar-card__title" data-i18n="pillars.p3_title">The Bilateral Corridor</h3>
                         <p class="pillar-card__desc" data-i18n="pillars.p3_desc">
-                            Positioned within IA-CEPA and Indonesia's 2045 vision (Hilirisasi), aligning G2G pathways
-                            with private capital deployment.
+                            Advancing a Future Made in Australia supply chain axis through IA-CEPA, aligned with
+                            Indonesia's 2045 industrial transformation—where policy certainty, sovereign coordination,
+                            and strategic capital converge to deliver integrated, execution-ready outcomes.
                         </p>
                     </div>
                     <!-- Pillar 4 -->
@@ -168,8 +199,7 @@
                         <span class="pillar-card__number">04</span>
                         <h3 class="pillar-card__title" data-i18n="pillars.p4_title">AI-Driven Logistics</h3>
                         <p class="pillar-card__desc" data-i18n="pillars.p4_desc">
-                            Embedding predictive systems and digital twins to de-risk industrial corridors (e.g. Mount
-                            Isa–Townsville supply chain).
+                            Embedding predictive systems and digital twins to de-risk industrial corridors.
                         </p>
                     </div>
                 </div>
@@ -374,30 +404,32 @@
                         Nafasz Global Pty Ltd | ACN: 669 029 458<br>
                         Level 15, 28 Freshwater Place, Southbank
                     </p>
+                    <!-- Future Made in Australia logo -->
+                    <div class="footer__branch-logo">
+                        <svg class="footer__logo-img" viewBox="0 0 180 28" fill="var(--color-white-muted)"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <text x="0" y="20" font-family="Inter, sans-serif" font-size="10" font-weight="400"
+                                letter-spacing="1">FUTURE MADE IN AUSTRALIA</text>
+                        </svg>
+                    </div>
                 </div>
                 <!-- Indonesia Branch -->
                 <div class="footer__branch">
                     <span class="footer__branch-label" data-i18n="footer.id_branch">Indonesia (Jakarta)</span>
                     <p class="footer__branch-legal" data-i18n="footer.id_legal">
-                        CV Nafasz Global | NIB: 3108250050372
+                        CV Nafasz Global | NIB: 3108250050372<br>
+                        Grand Slipi Tower, Jl Letjen S.Parman St No 22-24, Palmerah, West Jakarta City, Jakarta,
+                        Indonesia
                     </p>
+                    <!-- IA-CEPA logo -->
+                    <div class="footer__branch-logo">
+                        <svg class="footer__logo-img" viewBox="0 0 120 28" fill="var(--color-white-muted)"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <text x="0" y="20" font-family="Inter, sans-serif" font-size="11" font-weight="600"
+                                letter-spacing="2">IA-CEPA</text>
+                        </svg>
+                    </div>
                 </div>
-            </div>
-
-            <!-- Partner Logos (monochrome) -->
-            <div class="footer__logos">
-                <!-- IA-CEPA Logo placeholder -->
-                <svg class="footer__logo-img" viewBox="0 0 120 28" fill="var(--color-white-muted)"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <text x="0" y="20" font-family="Inter, sans-serif" font-size="11" font-weight="600"
-                        letter-spacing="2">IA-CEPA</text>
-                </svg>
-                <!-- Future Made in Australia placeholder -->
-                <svg class="footer__logo-img" viewBox="0 0 180 28" fill="var(--color-white-muted)"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <text x="0" y="20" font-family="Inter, sans-serif" font-size="10" font-weight="400"
-                        letter-spacing="1">FUTURE MADE IN AUSTRALIA</text>
-                </svg>
             </div>
 
             <div class="footer__compliance" data-i18n="footer.compliance">
