@@ -47,7 +47,7 @@ Berikut adalah Dokumen Persyaratan Produk (PRD) yang telah digabungkan secara le
 * **Pillar 1: Sovereign Equity.** Transitioning industry from transactional extraction → intergenerational participation 7\.  
 * **Pillar 2: Cultural Licence (SLO).** Operationalising Social Licence through structured First Nations engagement and consent frameworks 7\.  
 * **Pillar 3: The Bilateral Corridor.** Positioned within IA-CEPA and Indonesia's 2045 vision (Hilirisasi), aligning G2G pathways with private capital deployment 7\.  
-* **Pillar 4: AI-Driven Logistics.** Embedding predictive systems and digital twins to de-risk industrial corridors (e.g. Mount Isa-Townsville supply chain) 7\.
+* **Pillar 4: Logistics Tech.** Embedding predictive systems and digital twins to de-risk industrial corridors (e.g. Mount Isa-Townsville supply chain) 7\.
 
 **E. Section 4: The Circle**
 

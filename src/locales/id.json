@@ -4,35 +4,35 @@
         "enter": "Masuk"
     },
     "gate": {
-        "acknowledgement": "Kami mengakui masyarakat Wurundjeri Woi-wurrung dan Bunurong / Boon Wurrung dari Bangsa Kulin sebagai Penjaga Kedaulatan tanah tempat kami bekerja dan berkumpul di Naarm (Melbourne). Kami memberikan penghormatan mendalam kepada para Tetua mereka — masa lalu dan masa kini — serta mengakui bahwa kedaulatan tidak pernah diserahkan.",
-        "acknowledgement2": "Kami juga menghormati para leluhur dan berbagai bangsa di seluruh kepulauan Australia dan Indonesia. Kami berdiri dalam warisan 300 tahun jembatan perdagangan Yolngu-Makassar; sebuah hubungan yang dibangun atas kekerabatan dan pertukaran timbal balik.",
-        "acknowledgement3": "Dari mana pun Anda bergabung dengan kami, kami mengundang Anda untuk menghormati Penjaga Adat dari tanah di bawah kaki Anda.",
-        "welcome": "Selamat datang di masa depan pertukaran.",
-        "cta": "Saya Mengakui & Masuk"
+        "acknowledgement": "Kami mengakui masyarakat Wurundjeri Woi-wurrung dan Bunurong / Boon Wurrung dari Bangsa Kulin sebagai Penjaga Berdaulat atas tanah tempat kami bekerja dan berhimpun di Naarm (Melbourne). Kami memberikan penghormatan yang tulus kepada para leluhur mereka — yang telah tiada maupun yang masih hadir — dan menegaskan bahwa kedaulatan tidak pernah diserahkan.",
+        "acknowledgement2": "Kami juga menghormati para leluhur dan segenap bangsa di seluruh Australia dan Indonesia. Kami tegak di atas warisan 300 tahun jembatan perdagangan Yolngu-Makassar — sebuah relasi yang dibangun di atas kekerabatan dan pertukaran timbal balik, bukan penguasaan.",
+        "acknowledgement3": "Dari mana pun Anda hadir bersama kami, kami mengundang Anda untuk menghormati Penjaga Adat atas Tanah yang Anda pijak.",
+        "welcome": "Selamat memasuki masa depan pertukaran.",
+        "cta": "SAYA MENGAKUI & MELANJUTKAN"
     },
     "hero": {
         "headline": "Kearifan Lama, Pasar Baru:",
         "headline2": "Merancang Masa Depan Pertukaran.",
-        "subheadline": "Nafasz Global adalah konsultan boutique yang merintis transisi kekayaan berdaulat yang adil. Kami mempertemukan Pemimpin Industri, Kedaulatan Bangsa Pertama, dan Modal Global untuk bersama-sama merancang dan membangun konsorsium industri yang tangguh di seluruh Indo-Pasifik.",
-        "cta": "Masuki Lingkaran"
+        "subheadline": "Nafasz Global adalah firma konsultan butik yang memelopori transisi kekayaan berdaulat yang berkeadilan. Kami mempertemukan Pemimpin Industri, Kedaulatan Masyarakat Adat, dan Modal Global untuk bersama-sama merancang dan membangun konsorsium industri yang kukuh di seluruh kawasan Indo-Pasifik.",
+        "cta": "BERGABUNG DALAM LINGKARAN"
     },
     "legacy": {
         "label": "Warisan",
         "title": "Jembatan 300 Tahun",
-        "p1": "Kami menghormati masyarakat Yolngu di Arnhem Land Timur Laut. Selama berabad-abad, mereka duduk dalam lingkaran bersama masyarakat Makassar dari Sulawesi—membangun jembatan perdagangan yang dilandasi timbal balik, bukan ekstraksi.",
-        "p2": "Model pertukaran pra-kolonial ini membentuk filosofi operasional Nafasz Global: pengelolaan, kesinambungan, dan kemakmuran bersama."
+        "p1": "Kami menghormati masyarakat Yolngu di Arnhem Land bagian Timur Laut. Selama berabad-abad, mereka bersidang dalam lingkaran bersama masyarakat Makassar dari Sulawesi — membangun jembatan perdagangan yang dilandasi timbal balik, bukan eksploitasi.",
+        "p2": "Model pertukaran pra-kolonial ini menjadi landasan filosofi operasional Nafasz Global: penatalayanan, kesinambungan, dan kemakmuran bersama."
     },
     "pillars": {
         "label": "Strategi",
         "title": "Pilar Kami",
-        "p1_title": "Ekuitas Berdaulat",
-        "p1_desc": "Mentransisikan industri dari ekstraksi transaksional → partisipasi antargenerasi.",
-        "p2_title": "Lisensi Budaya (SLO)",
-        "p2_desc": "Mengoperasionalkan Lisensi Sosial melalui kerangka keterlibatan dan persetujuan Bangsa Pertama yang terstruktur.",
-        "p3_title": "Koridor Bilateral",
-        "p3_desc": "Memajukan poros rantai pasok Future Made in Australia melalui IA-CEPA, selaras dengan transformasi industri Indonesia 2045—di mana kepastian kebijakan, koordinasi kedaulatan, dan modal strategis bertemu untuk menghasilkan solusi terintegrasi yang siap eksekusi.",
-        "p4_title": "Logistik Berbasis AI",
-        "p4_desc": "Menanamkan sistem prediktif dan digital twin untuk mengurangi risiko koridor industri."
+        "p1_title": "EKUITAS BERDAULAT",
+        "p1_desc": "Mentransformasi industri dari model ekstraksi transaksional menuju partisipasi lintas generasi.",
+        "p2_title": "LISENSI BUDAYA (SLO)",
+        "p2_desc": "Mengoperasionalkan Lisensi Sosial melalui kerangka keterlibatan dan persetujuan Masyarakat Adat yang terstruktur.",
+        "p3_title": "KORIDOR BILATERAL",
+        "p3_desc": "Diposisikan dalam kerangka IA-CEPA dan Visi Indonesia 2045 (Hilirisasi), menyelaraskan jalur G2G dengan pengerahan modal swasta.",
+        "p4_title": "LOGISTIK BERBASIS TEKNOLOGI",
+        "p4_desc": "Menanamkan sistem prediktif dan kembaran digital untuk memitigasi risiko pada koridor industri"
     },
     "circle": {
         "label": "Lingkaran",
@@ -41,34 +41,34 @@
         "hub2": "Jakarta",
         "hub3": "Koridor Indo-Pasifik",
         "vision_label": "Visi",
-        "vision": "Merancang sistem kekayaan berdaulat bilateral yang menghormati leluhur sambil memajukan pasar abad ke-21.",
+        "vision": "Merancang sistem kekayaan berdaulat bilateral yang menghormati para leluhur sekaligus memajukan pasar abad ke-21.",
         "mission_label": "Misi",
-        "mission": "Memulai dan melaksanakan mandat di mana kedaulatan masyarakat adat dan modal global bersama-sama merancang nilai jangka panjang."
+        "mission": "Mengawali dan melaksanakan mandat di mana kedaulatan masyarakat adat dan modal global bersama-sama merancang nilai lintas generasi."
     },
     "bridge": {
         "label": "Jembatan",
         "title": "Model Operasi",
-        "phase1_title": "Dengarkan",
-        "phase1_desc": "Keterlibatan mendalam dengan Penjaga Adat, pemimpin komunitas, dan pemangku kepentingan berdaulat untuk memahami tanah, hukum, dan warisan.",
-        "phase2_title": "Selaraskan",
-        "phase2_desc": "Menyusun mandat yang menyelaraskan kerangka kedaulatan Bangsa Pertama dengan persyaratan modal institusional dan koridor kebijakan bilateral.",
-        "phase3_title": "Eksekusi",
-        "phase3_desc": "Mengerahkan modal, teknologi, dan struktur tata kelola yang memberikan nilai antargenerasi di seluruh koridor Australia–Indonesia."
+        "phase1_title": "1 | MENDENGAR",
+        "phase1_desc": "Pelibatan mendalam dengan Penjaga Adat, pemimpin komunitas, dan pemangku kepentingan berdaulat untuk memahami tanah, hukum, dan warisan.",
+        "phase2_title": "2 | MENYELARASKAN",
+        "phase2_desc": "Menyusun mandat yang menyelaraskan kerangka kedaulatan Masyarakat Adat dengan persyaratan modal institusional dan koridor kebijakan bilateral.",
+        "phase3_title": "3 | MENGEKSEKUSI",
+        "phase3_desc": "Menggerakkan modal, teknologi, dan struktur tata kelola yang menghasilkan nilai lintas generasi di seluruh koridor Australia–Indonesia."
     },
     "funnel": {
         "label": "Hubungi",
-        "question": "Kami sedang merajut masa depan pertukaran. Visi apa yang akan Anda bawa untuk membentuk 300 tahun ke depan bersama kami?",
+        "question": "Kami sedang merajut masa depan pertukaran. Visi apa yang Anda bawa untuk bersama-sama membentuk 300 tahun ke depan?",
         "cta": "Mulai Briefing Anda",
-        "calendly": "Briefing Penemuan Awal dengan Direktur",
+        "calendly": "Sesi dialog Awal bersama Direktur",
         "success_title": "Terima kasih.",
-        "success_desc": "Visi Anda telah diterima. Kami akan menghubungi Anda untuk menjadwalkan Briefing Penemuan Awal dengan Direktur."
+        "success_desc": "Visi Anda telah kami terima. Kami akan segera menghubungi Anda untuk menjadwalkan Sesi Dialog bersama Direktur."
     },
     "footer": {
         "au_branch": "Australia (Naarm / Melbourne)",
         "au_legal": "Nafasz Global Pty Ltd | ACN: 669 029 458 | Level 15, 28 Freshwater Place, Southbank",
         "id_branch": "Indonesia (Jakarta)",
         "id_legal": "CV Nafasz Global | NIB: 3108250050372 | Grand Slipi Tower, Jl Letjen S.Parman St No 22-24, Palmerah, West Jakarta City, Jakarta, Indonesia",
-        "compliance": "Konsultansi Strategis & Budaya saja. Tidak memberikan saran produk keuangan.",
-        "copyright": "© 2026 Nafasz Global. Seluruh hak dilindungi."
+        "compliance": "Konsultansi Strategis & Budaya semata. Tidak memberikan saran produk keuangan.",
+        "copyright": "© 2026 Nafasz Global. Hak cipta dilindungi."
     }
 }

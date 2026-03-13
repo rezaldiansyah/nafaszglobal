@@ -1,0 +1,12 @@
+name = "nafaszglobal-form"
+main = "src/index.js"
+compatibility_date = "2024-12-01"
+
+[vars]
+SENDER_EMAIL = "noreply@mail.nafaszglobal.com"
+SENDER_NAME = "Nafasz Global"
+NOTIFY_EMAIL = "it.nafaszglobal@gmail.com"
+ALLOWED_ORIGIN = "https://nafaszglobal.com"
+
+# RESEND_API_KEY should be set as a secret:
+# npx wrangler secret put RESEND_API_KEY

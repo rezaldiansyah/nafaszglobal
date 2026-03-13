@@ -20,7 +20,7 @@
   - [x] Narasi Yolngu-Macassan 300-year trade history
   - [x] Ochre dividers, fade-in on scroll
 - [x] Implement Strategy Pillars (interactive tabs)
-  - [x] 4 pillar cards: Sovereign Equity, Cultural Licence, Bilateral Corridor, AI-Driven Logistics
+  - [x] 4 pillar cards: Sovereign Equity, Cultural Licence, Bilateral Corridor, Logistics Tech
   - [x] Desktop: hover to expand description
   - [x] Mobile: accordion click behavior
 - [x] Implement The Circle Section (Vision & Mission)
@@ -34,9 +34,11 @@
   - [x] Question: "What is your vision for 300 years of exchange?"
   - [x] Native form: Name, Email, Organisation, Vision
   - [x] Success state with thank you message
+  - [x] Success popup (modal) after form submission
   - [ ] ⏳ Tally/Typeform embed (menunggu akun dari user)
   - [ ] ⏳ Calendly redirect integration (menunggu link dari user)
-  - [ ] ⏳ Auto-reply email setup (menunggu konfigurasi email)
+  - [/] 🔄 Auto-reply email (Cloudflare Worker backend READY)
+  - [ ] ⏳ Deploy Worker & Set Secrets (npx wrangler deploy)
 - [x] Implement Institutional Footer
   - [x] Dual-branch: Australia (Naarm) & Indonesia (Jakarta)
   - [x] "Pty Ltd" dan "CV" — HANYA di footer ✅

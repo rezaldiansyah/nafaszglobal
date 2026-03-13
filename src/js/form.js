@@ -6,28 +6,83 @@
 export function initForm() {
     const form = document.getElementById('funnel-form');
     const successEl = document.getElementById('funnel-success');
+    const modal = document.getElementById('success-modal');
+    const okBtn = document.getElementById('modal-ok-btn');
+    const closeBtn = document.getElementById('modal-close-btn');
+    const modalBackdrop = document.getElementById('modal-backdrop');
+
+    // Detect if running locally or in production
+    const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+    const WORKER_URL = isLocal
+        ? 'http://localhost:8787'
+        : 'https://nafaszglobal-form.rezaaldi.workers.dev';
+
+    const closeModal = () => {
+        if (modal) {
+            modal.classList.remove('is-open');
+            setTimeout(() => {
+                modal.hidden = true;
+                // Optional: scroll back to top or elsewhere
+            }, 400);
+        }
+    };
+
+    if (okBtn) okBtn.addEventListener('click', closeModal);
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    if (modalBackdrop) modalBackdrop.addEventListener('click', closeModal);
 
     if (!form) return;
 
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
         e.preventDefault();
+
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalBtnText = submitBtn.innerHTML;
+
+        // Loading state
+        submitBtn.disabled = true;
+        submitBtn.style.opacity = '0.7';
+        submitBtn.innerHTML = 'Submitting...';
 
         const formData = new FormData(form);
         const data = Object.fromEntries(formData);
 
-        // Log form data (in production, this would send to backend/Tally)
-        console.log('Form submitted:', data);
+        try {
+            const response = await fetch(WORKER_URL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            });
 
-        // Show success state
-        form.style.display = 'none';
-        if (successEl) {
-            successEl.hidden = false;
-            successEl.classList.add('visible');
+            const result = await response.json();
+
+            if (result.success) {
+                // Show success modal
+                if (modal) {
+                    modal.hidden = false;
+                    setTimeout(() => { modal.classList.add('is-open'); }, 10);
+                } else if (successEl) {
+                    // Fallback to inline success if modal not found
+                    form.style.display = 'none';
+                    successEl.hidden = false;
+                    successEl.classList.add('visible');
+                    successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+
+                form.reset();
+            } else {
+                throw new Error(result.error || (result.errors && result.errors.join(', ')) || 'Submission failed');
+            }
+        } catch (err) {
+            console.error('Form submission error:', err);
+            alert('Sorry, there was an error: ' + err.message);
+        } finally {
+            // Re-enable button
+            submitBtn.disabled = false;
+            submitBtn.style.opacity = '1';
+            submitBtn.innerHTML = originalBtnText;
         }
-
-        // Optional: redirect to Calendly after delay
-        // setTimeout(() => {
-        //   window.open('https://calendly.com/nafaszglobal/discovery', '_blank');
-        // }, 2000);
     });
 }

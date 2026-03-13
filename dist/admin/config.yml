@@ -1,0 +1,299 @@
+# ============================================================
+# Nafasz Global — Decap CMS Configuration
+# ============================================================
+# Backend: GitHub repository
+# Media: Stored in /public/uploads
+# Collections: Site content (i18n) + Additional pages
+# ============================================================
+
+backend:
+  name: github
+  repo: rezaldiansyah/nafaszglobal   # <-- Your GitHub repo
+  branch: main
+
+# Enable local backend for development (uses npx decap-server proxy)
+# This is automatically ignored in production when the proxy isn't running
+local_backend: true
+
+# Where uploaded images/media will be stored
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+# ============================================================
+# COLLECTION 1: Site Content (i18n strings)
+# Edits the main page text in EN and ID
+# ============================================================
+collections:
+  - name: "site-content"
+    label: "🌐 Site Content"
+    description: "Edit the main website text. Changes will appear on the live website after saving. Click on 'English Content' or 'Indonesian Content' to edit."
+    files:
+      # ---------- English ----------
+      - name: "content-en"
+        label: "✏️ English Content"
+        file: "src/locales/en.json"
+        description: "Edit all English text on the website"
+        fields:
+          - label: "🧭 Navigation Bar"
+            name: "nav"
+            widget: "object"
+            collapsed: true
+            hint: "Text shown in the top navigation bar of the website"
+            fields:
+              - { label: "Language Label", name: "language", widget: "string", hint: "The label for language (e.g. EN)" }
+              - { label: "Enter Button", name: "enter", widget: "string", hint: "The button text to enter the site" }
+
+          - label: "🚪 Welcome Pop-Up (Cultural Gate)"
+            name: "gate"
+            widget: "object"
+            collapsed: true
+            hint: "The pop-up that appears when visitors first open the website"
+            fields:
+              - { label: "Acknowledgement (Paragraph 1)", name: "acknowledgement", widget: "text", hint: "First paragraph of the acknowledgement text" }
+              - { label: "Acknowledgement (Paragraph 2)", name: "acknowledgement2", widget: "text", hint: "Second paragraph of the acknowledgement text" }
+              - { label: "Acknowledgement (Paragraph 3)", name: "acknowledgement3", widget: "text", hint: "Third paragraph of the acknowledgement text" }
+              - { label: "Welcome Text", name: "welcome", widget: "string", hint: "Short welcome message shown before the button" }
+              - { label: "Enter Button Text", name: "cta", widget: "string", hint: "Text on the button to enter the website" }
+
+          - label: "🏠 Hero Section (Main Banner)"
+            name: "hero"
+            widget: "object"
+            collapsed: true
+            hint: "The first big section visitors see when they enter the website"
+            fields:
+              - { label: "Headline (Line 1)", name: "headline", widget: "string", hint: "First line of the main headline" }
+              - { label: "Headline (Line 2)", name: "headline2", widget: "string", hint: "Second line of the main headline (shown in gold/ochre)" }
+              - { label: "Description", name: "subheadline", widget: "text", hint: "The paragraph text below the headline" }
+              - { label: "Call-to-Action Button", name: "cta", widget: "string", hint: "Text on the main action button" }
+
+          - label: "📜 The Legacy Section (History)"
+            name: "legacy"
+            widget: "object"
+            collapsed: true
+            hint: "The section telling the story of the 300-year trade bridge"
+            fields:
+              - { label: "Section Label", name: "label", widget: "string", hint: "Small text above the title" }
+              - { label: "Title", name: "title", widget: "string", hint: "Main title of this section" }
+              - { label: "Story (Paragraph 1)", name: "p1", widget: "text", hint: "First paragraph of the legacy story" }
+              - { label: "Story (Paragraph 2)", name: "p2", widget: "text", hint: "Second paragraph — the philosophical message" }
+
+          - label: "🏛️ Strategy Pillars (4 Pillars)"
+            name: "pillars"
+            widget: "object"
+            collapsed: true
+            hint: "The four strategy pillars section — each pillar has a title and description"
+            fields:
+              - { label: "Section Label", name: "label", widget: "string", hint: "Small text above the title (e.g. Strategy)" }
+              - { label: "Section Title", name: "title", widget: "string", hint: "Main title (e.g. Our Pillars)" }
+              - { label: "Pillar 1 — Title", name: "p1_title", widget: "string", hint: "Title of the first pillar" }
+              - { label: "Pillar 1 — Description", name: "p1_desc", widget: "text", hint: "Description of the first pillar" }
+              - { label: "Pillar 2 — Title", name: "p2_title", widget: "string" }
+              - { label: "Pillar 2 — Description", name: "p2_desc", widget: "text" }
+              - { label: "Pillar 3 — Title", name: "p3_title", widget: "string" }
+              - { label: "Pillar 3 — Description", name: "p3_desc", widget: "text" }
+              - { label: "Pillar 4 — Title", name: "p4_title", widget: "string" }
+              - { label: "Pillar 4 — Description", name: "p4_desc", widget: "text" }
+
+          - label: "🌏 The Circle (Vision & Mission)"
+            name: "circle"
+            widget: "object"
+            collapsed: true
+            hint: "Vision, mission, and the Jakarta–Melbourne ecosystem map section"
+            fields:
+              - { label: "Section Label", name: "label", widget: "string" }
+              - { label: "Section Title", name: "title", widget: "string" }
+              - { label: "City 1 (Melbourne)", name: "hub1", widget: "string", hint: "Label for Melbourne on the map" }
+              - { label: "City 2 (Jakarta)", name: "hub2", widget: "string", hint: "Label for Jakarta on the map" }
+              - { label: "Corridor Label", name: "hub3", widget: "string", hint: "Label for the corridor badge on the map" }
+              - { label: "Vision Label", name: "vision_label", widget: "string" }
+              - { label: "Vision Statement", name: "vision", widget: "text", hint: "The company's vision statement" }
+              - { label: "Mission Label", name: "mission_label", widget: "string" }
+              - { label: "Mission Statement", name: "mission", widget: "text", hint: "The company's mission statement" }
+
+          - label: "🌉 The Bridge (How We Work)"
+            name: "bridge"
+            widget: "object"
+            collapsed: true
+            hint: "The 3-phase operating model: Listen → Align → Execute"
+            fields:
+              - { label: "Section Label", name: "label", widget: "string" }
+              - { label: "Section Title", name: "title", widget: "string" }
+              - { label: "Phase 1 — Title", name: "phase1_title", widget: "string", hint: "e.g. Listen" }
+              - { label: "Phase 1 — Description", name: "phase1_desc", widget: "text" }
+              - { label: "Phase 2 — Title", name: "phase2_title", widget: "string", hint: "e.g. Align" }
+              - { label: "Phase 2 — Description", name: "phase2_desc", widget: "text" }
+              - { label: "Phase 3 — Title", name: "phase3_title", widget: "string", hint: "e.g. Execute" }
+              - { label: "Phase 3 — Description", name: "phase3_desc", widget: "text" }
+
+          - label: "📩 Contact Form Section"
+            name: "funnel"
+            widget: "object"
+            collapsed: true
+            hint: "The contact form section at the bottom of the page"
+            fields:
+              - { label: "Section Label", name: "label", widget: "string" }
+              - { label: "Main Question", name: "question", widget: "text", hint: "The big question shown above the form" }
+              - { label: "Submit Button Text", name: "cta", widget: "string", hint: "Text on the form submit button" }
+              - { label: "Calendly Note", name: "calendly", widget: "string", hint: "Text about the discovery briefing" }
+              - { label: "Success Title", name: "success_title", widget: "string", hint: "Title shown after form submission" }
+              - { label: "Success Message", name: "success_desc", widget: "text", hint: "Message shown after form submission" }
+
+          - label: "📋 Footer"
+            name: "footer"
+            widget: "object"
+            collapsed: true
+            hint: "Company details and legal information at the bottom of every page"
+            fields:
+              - { label: "Australia Branch Name", name: "au_branch", widget: "string" }
+              - { label: "Australia Legal Details", name: "au_legal", widget: "string", hint: "Company name, ACN, and address" }
+              - { label: "Indonesia Branch Name", name: "id_branch", widget: "string" }
+              - { label: "Indonesia Legal Details", name: "id_legal", widget: "string", hint: "Company name, NIB, and address" }
+              - { label: "Compliance Notice", name: "compliance", widget: "text", hint: "Legal/compliance disclaimer text" }
+              - { label: "Copyright Text", name: "copyright", widget: "string" }
+
+      # ---------- Indonesian ----------
+      - name: "content-id"
+        label: "Indonesian Content (Bahasa)"
+        file: "src/locales/id.json"
+        fields:
+          - label: "Navigation"
+            name: "nav"
+            widget: "object"
+            fields:
+              - { label: "Language Label", name: "language", widget: "string" }
+              - { label: "Enter Button", name: "enter", widget: "string" }
+
+          - label: "Cultural Gate"
+            name: "gate"
+            widget: "object"
+            fields:
+              - { label: "Pengakuan (Paragraf 1)", name: "acknowledgement", widget: "text" }
+              - { label: "Pengakuan (Paragraf 2)", name: "acknowledgement2", widget: "text" }
+              - { label: "Pengakuan (Paragraf 3)", name: "acknowledgement3", widget: "text" }
+              - { label: "Teks Selamat Datang", name: "welcome", widget: "string" }
+              - { label: "Tombol CTA", name: "cta", widget: "string" }
+
+          - label: "Hero Section"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Headline (Baris 1)", name: "headline", widget: "string" }
+              - { label: "Headline (Baris 2)", name: "headline2", widget: "string" }
+              - { label: "Sub-headline", name: "subheadline", widget: "text" }
+              - { label: "Tombol CTA", name: "cta", widget: "string" }
+
+          - label: "Legacy Section"
+            name: "legacy"
+            widget: "object"
+            fields:
+              - { label: "Label Section", name: "label", widget: "string" }
+              - { label: "Judul", name: "title", widget: "string" }
+              - { label: "Paragraf 1", name: "p1", widget: "text" }
+              - { label: "Paragraf 2", name: "p2", widget: "text" }
+
+          - label: "Pilar Strategi"
+            name: "pillars"
+            widget: "object"
+            fields:
+              - { label: "Label Section", name: "label", widget: "string" }
+              - { label: "Judul", name: "title", widget: "string" }
+              - { label: "Pilar 1 Judul", name: "p1_title", widget: "string" }
+              - { label: "Pilar 1 Deskripsi", name: "p1_desc", widget: "text" }
+              - { label: "Pilar 2 Judul", name: "p2_title", widget: "string" }
+              - { label: "Pilar 2 Deskripsi", name: "p2_desc", widget: "text" }
+              - { label: "Pilar 3 Judul", name: "p3_title", widget: "string" }
+              - { label: "Pilar 3 Deskripsi", name: "p3_desc", widget: "text" }
+              - { label: "Pilar 4 Judul", name: "p4_title", widget: "string" }
+              - { label: "Pilar 4 Deskripsi", name: "p4_desc", widget: "text" }
+
+          - label: "Lingkaran (Visi & Misi)"
+            name: "circle"
+            widget: "object"
+            fields:
+              - { label: "Label Section", name: "label", widget: "string" }
+              - { label: "Judul", name: "title", widget: "string" }
+              - { label: "Hub 1", name: "hub1", widget: "string" }
+              - { label: "Hub 2", name: "hub2", widget: "string" }
+              - { label: "Hub 3", name: "hub3", widget: "string" }
+              - { label: "Label Visi", name: "vision_label", widget: "string" }
+              - { label: "Visi", name: "vision", widget: "text" }
+              - { label: "Label Misi", name: "mission_label", widget: "string" }
+              - { label: "Misi", name: "mission", widget: "text" }
+
+          - label: "Jembatan (Model Operasi)"
+            name: "bridge"
+            widget: "object"
+            fields:
+              - { label: "Label Section", name: "label", widget: "string" }
+              - { label: "Judul", name: "title", widget: "string" }
+              - { label: "Fase 1 Judul", name: "phase1_title", widget: "string" }
+              - { label: "Fase 1 Deskripsi", name: "phase1_desc", widget: "text" }
+              - { label: "Fase 2 Judul", name: "phase2_title", widget: "string" }
+              - { label: "Fase 2 Deskripsi", name: "phase2_desc", widget: "text" }
+              - { label: "Fase 3 Judul", name: "phase3_title", widget: "string" }
+              - { label: "Fase 3 Deskripsi", name: "phase3_desc", widget: "text" }
+
+          - label: "Kontak / Funnel"
+            name: "funnel"
+            widget: "object"
+            fields:
+              - { label: "Label Section", name: "label", widget: "string" }
+              - { label: "Pertanyaan", name: "question", widget: "text" }
+              - { label: "Tombol CTA", name: "cta", widget: "string" }
+              - { label: "Catatan Calendly", name: "calendly", widget: "string" }
+              - { label: "Judul Sukses", name: "success_title", widget: "string" }
+              - { label: "Deskripsi Sukses", name: "success_desc", widget: "text" }
+
+          - label: "Footer"
+            name: "footer"
+            widget: "object"
+            fields:
+              - { label: "Cabang Australia", name: "au_branch", widget: "string" }
+              - { label: "Legal Australia", name: "au_legal", widget: "string" }
+              - { label: "Cabang Indonesia", name: "id_branch", widget: "string" }
+              - { label: "Legal Indonesia", name: "id_legal", widget: "string" }
+              - { label: "Catatan Kepatuhan", name: "compliance", widget: "text" }
+              - { label: "Hak Cipta", name: "copyright", widget: "string" }
+
+  # ============================================================
+  # COLLECTION 2: Site Settings
+  # Global settings (menu toggle, etc.)
+  # ============================================================
+  - name: "settings"
+    label: "⚙️ Settings"
+    description: "Global website settings — enable/disable the navigation menu"
+    files:
+      - name: "site-settings"
+        label: "🍔 Menu & Navigation"
+        file: "src/content/settings.json"
+        description: "Control the hamburger menu on the main website"
+        fields:
+          - label: "Enable Navigation Menu"
+            name: "menu_enabled"
+            widget: "boolean"
+            default: true
+            hint: "When ON, a hamburger menu icon (☰) will appear on the website. When OFF, no menu is shown."
+
+  # ============================================================
+  # COLLECTION 3: Additional Pages
+  # Create new pages (e.g. About, Services, News)
+  # ============================================================
+  - name: "pages"
+    label: "📄 Pages"
+    label_singular: "Page"
+    description: "Create and manage additional pages. Pages with 'Show in Menu' enabled will appear in the hamburger menu."
+    folder: "src/content/pages"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "📌 Title", name: "title", widget: "string", hint: "Page title in English" }
+      - { label: "📌 Title (Indonesian)", name: "title_id", widget: "string", hint: "Page title in Bahasa Indonesia" }
+      - { label: "🔗 URL Slug", name: "slug", widget: "string", hint: "The URL path for this page (e.g. 'about' → nafaszglobal.com/pages/about/)" }
+      - { label: "📝 Meta Description", name: "description", widget: "text", required: false, hint: "Short description for search engines (SEO)" }
+      - { label: "🖼️ Featured Image", name: "featured_image", widget: "image", required: false }
+      - { label: "📅 Publish Date", name: "date", widget: "datetime" }
+      - { label: "✅ Published", name: "published", widget: "boolean", default: false, hint: "Only published pages will be visible on the website" }
+      - { label: "📋 Show in Menu", name: "show_in_menu", widget: "boolean", default: false, hint: "When ON, this page will appear in the hamburger navigation menu" }
+      - { label: "🔢 Menu Order", name: "menu_order", widget: "number", default: 10, value_type: "int", min: 1, max: 99, hint: "Order in the menu (1 = first, 2 = second, etc.)" }
+      - { label: "📄 Body (English)", name: "body", widget: "markdown" }
+      - { label: "📄 Body (Indonesian)", name: "body_id", widget: "markdown", required: false }
