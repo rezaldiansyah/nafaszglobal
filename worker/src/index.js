@@ -243,13 +243,15 @@ function escapeHtml(str) {
  * Send an email via Resend API
  */
 async function sendEmail(apiKey, { from, to, subject, html, replyTo }) {
+    const toArray = Array.isArray(to) ? to : to.split(',').map(e => e.trim()).filter(Boolean);
+
     const res = await fetch(RESEND_API, {
         method: 'POST',
         headers: {
             'Authorization': `Bearer ${apiKey}`,
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ from, to: [to], subject, html, reply_to: replyTo }),
+        body: JSON.stringify({ from, to: toArray, subject, html, reply_to: replyTo }),
     });
 
     if (!res.ok) {

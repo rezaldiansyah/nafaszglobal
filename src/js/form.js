@@ -11,11 +11,8 @@ export function initForm() {
     const closeBtn = document.getElementById('modal-close-btn');
     const modalBackdrop = document.getElementById('modal-backdrop');
 
-    // Detect if running locally or in production
-    const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-    const WORKER_URL = isLocal
-        ? 'http://localhost:8787'
-        : 'https://nafaszglobal-form.rezaaldi.workers.dev';
+    // Update worker URL to point to your new Cloudflare Worker
+    const WORKER_URL = 'https://nafaszglobal-form.raldiansyah339.workers.dev';
 
     const closeModal = () => {
         if (modal) {
