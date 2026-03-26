@@ -10,6 +10,7 @@ backend:
   name: github
   repo: rezaldiansyah/nafaszglobal   # <-- Your GitHub repo
   branch: main
+  base_url: https://nafaszglobal-form.raldiansyah339.workers.dev
 
 # Enable local backend for development (uses npx decap-server proxy)
 # This is automatically ignored in production when the proxy isn't running

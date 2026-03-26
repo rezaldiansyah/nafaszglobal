@@ -286,7 +286,60 @@ export default {
             return new Response(null, { status: 204, headers });
         }
 
-        // Only allow POST
+        const url = new URL(request.url);
+
+        // --- GITHUB OAUTH ROUTES FOR DECAP CMS ---
+        if (request.method === 'GET' && url.pathname === '/auth') {
+            const githubAuthUrl = `https://github.com/login/oauth/authorize?client_id=${env.GITHUB_CLIENT_ID}&scope=repo`;
+            return Response.redirect(githubAuthUrl, 302);
+        }
+
+        if (request.method === 'GET' && url.pathname === '/callback') {
+            const code = url.searchParams.get('code');
+            if (!code) return new Response("Error: No code provided", { status: 400 });
+
+            try {
+                // Exchange code for token
+                const tokenResponse = await fetch('https://github.com/login/oauth/access_token', {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        client_id: env.GITHUB_CLIENT_ID,
+                        client_secret: env.GITHUB_CLIENT_SECRET,
+                        code: code
+                    })
+                });
+                const tokenData = await tokenResponse.json();
+                const token = tokenData.access_token;
+                if (!token) throw new Error("No token returned by GitHub");
+
+                // Post message back to Decap CMS popup
+                const htmlResponse = `
+                    <!DOCTYPE html><html><head><title>Success</title></head><body>
+                    <p>Authentication successful! You can close this window if it doesn't close automatically.</p>
+                    <script>
+                        const receiveMessage = (message) => {
+                            window.opener.postMessage(
+                                'authorization:github:success:{"token":"' + "${token}" + '","provider":"github"}',
+                                message.origin
+                            );
+                            window.removeEventListener("message", receiveMessage, false);
+                        };
+                        window.addEventListener("message", receiveMessage, false);
+                        window.opener.postMessage("authorizing:github", "*");
+                    </script></body></html>
+                `;
+                return new Response(htmlResponse, { headers: { "Content-Type": "text/html" } });
+            } catch (err) {
+                return new Response("OAuth Error: " + err.message, { status: 500 });
+            }
+        }
+
+        // --- CONTACT FORM ROUTE ---
+        // Only allow POST for the contact form
         if (request.method !== 'POST') {
             return Response.json(
                 { success: false, error: 'Method not allowed' },
