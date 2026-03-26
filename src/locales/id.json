@@ -61,7 +61,11 @@
         "cta": "Mulai Briefing Anda",
         "calendly": "Sesi Percakapan Awal bersama Tim",
         "success_title": "Terima kasih.",
-        "success_desc": "Visi Anda telah kami terima. Kami akan segera menghubungi Anda untuk menjadwalkan Sesi Percakapan Awal bersama Tim."
+        "success_desc": "Visi Anda telah kami terima. Kami akan segera menghubungi Anda untuk menjadwalkan Sesi Percakapan Awal bersama Tim.",
+        "ph_name": "Nama Anda",
+        "ph_email": "Alamat Email",
+        "ph_org": "Organisasi",
+        "ph_vision": "Bagikan visi Anda..."
     },
     "footer": {
         "au_branch": "Australia (Naarm / Melbourne)",

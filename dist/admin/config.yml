@@ -138,6 +138,10 @@ collections:
               - { label: "Calendly Note", name: "calendly", widget: "string", hint: "Text about the discovery briefing" }
               - { label: "Success Title", name: "success_title", widget: "string", hint: "Title shown after form submission" }
               - { label: "Success Message", name: "success_desc", widget: "text", hint: "Message shown after form submission" }
+              - { label: "Placeholder: Name", name: "ph_name", widget: "string", default: "Your Name" }
+              - { label: "Placeholder: Email", name: "ph_email", widget: "string", default: "Email Address" }
+              - { label: "Placeholder: Organisation", name: "ph_org", widget: "string", default: "Organisation" }
+              - { label: "Placeholder: Vision", name: "ph_vision", widget: "string", default: "Share your vision..." }
 
           - label: "📋 Footer"
             name: "footer"
@@ -244,6 +248,10 @@ collections:
               - { label: "Catatan Calendly", name: "calendly", widget: "string" }
               - { label: "Judul Sukses", name: "success_title", widget: "string" }
               - { label: "Deskripsi Sukses", name: "success_desc", widget: "text" }
+              - { label: "Placeholder: Nama", name: "ph_name", widget: "string", default: "Nama Anda" }
+              - { label: "Placeholder: Email", name: "ph_email", widget: "string", default: "Alamat Email" }
+              - { label: "Placeholder: Organisasi", name: "ph_org", widget: "string", default: "Organisasi" }
+              - { label: "Placeholder: Visi", name: "ph_vision", widget: "string", default: "Bagikan visi Anda..." }
 
           - label: "Footer"
             name: "footer"

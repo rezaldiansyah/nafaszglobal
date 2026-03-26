@@ -55,7 +55,11 @@
     "cta": "Step Into The Circle",
     "calendly": "Initial Conversation with the Team",
     "success_title": "Thank you.",
-    "success_desc": "Your vision has been received. We will be in touch to schedule your Initial Conversation with the Team."
+    "success_desc": "Your vision has been received. We will be in touch to schedule your Initial Conversation with the Team.",
+    "ph_name": "Your Name",
+    "ph_email": "Email Address",
+    "ph_org": "Organisation",
+    "ph_vision": "Share your vision..."
   },
   "hero": {
     "headline": "Old Wisdom, New Markets:",

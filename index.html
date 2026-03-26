@@ -360,11 +360,14 @@
                 </div>
                 <div class="funnel__form-container reveal">
                     <form class="funnel__native-form" id="funnel-form">
-                        <input type="text" class="funnel__input" name="name" placeholder="Your Name" required />
-                        <input type="email" class="funnel__input" name="email" placeholder="Email Address" required />
-                        <input type="text" class="funnel__input" name="organisation" placeholder="Organisation" />
+                        <input type="text" class="funnel__input" name="name" placeholder="Your Name"
+                            data-i18n="funnel.ph_name" required />
+                        <input type="email" class="funnel__input" name="email" placeholder="Email Address"
+                            data-i18n="funnel.ph_email" required />
+                        <input type="text" class="funnel__input" name="organisation" placeholder="Organisation"
+                            data-i18n="funnel.ph_org" />
                         <textarea class="funnel__input funnel__textarea" name="vision"
-                            placeholder="Share your vision..." required></textarea>
+                            placeholder="Share your vision..." data-i18n="funnel.ph_vision" required></textarea>
                         <button type="submit" class="funnel__submit" data-i18n="funnel.cta">
                             Begin Your Briefing
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
