@@ -150,9 +150,9 @@ collections:
             hint: "Company details and legal information at the bottom of every page"
             fields:
               - { label: "Australia Branch Name", name: "au_branch", widget: "string" }
-              - { label: "Australia Legal Details", name: "au_legal", widget: "string", hint: "Company name, ACN, and address" }
+              - { label: "Australia Legal Details", name: "au_legal", widget: "string", hint: "Company name, ACN, and address", required: false }
               - { label: "Indonesia Branch Name", name: "id_branch", widget: "string" }
-              - { label: "Indonesia Legal Details", name: "id_legal", widget: "string", hint: "Company name, NIB, and address" }
+              - { label: "Indonesia Legal Details", name: "id_legal", widget: "string", hint: "Company name, NIB, and address", required: false }
               - { label: "Compliance Notice", name: "compliance", widget: "text", hint: "Legal/compliance disclaimer text" }
               - { label: "Copyright Text", name: "copyright", widget: "string" }
 
@@ -258,9 +258,9 @@ collections:
             widget: "object"
             fields:
               - { label: "Cabang Australia", name: "au_branch", widget: "string" }
-              - { label: "Legal Australia", name: "au_legal", widget: "string" }
+              - { label: "Legal Australia", name: "au_legal", widget: "string", required: false }
               - { label: "Cabang Indonesia", name: "id_branch", widget: "string" }
-              - { label: "Legal Indonesia", name: "id_legal", widget: "string" }
+              - { label: "Legal Indonesia", name: "id_legal", widget: "string", required: false }
               - { label: "Catatan Kepatuhan", name: "compliance", widget: "text" }
               - { label: "Hak Cipta", name: "copyright", widget: "string" }
 
