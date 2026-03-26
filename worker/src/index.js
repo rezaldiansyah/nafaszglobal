@@ -176,18 +176,21 @@ function buildAutoReplyEmail({ name }) {
                             <p style="color:#f5f5f5; font-size:18px; margin:0 0 8px; font-weight:500;">
                                 Dear ${escapeHtml(firstName)},
                             </p>
-                            <p style="color:#ccc; font-size:15px; margin:0 0 24px; line-height:1.8;">
-                                Thank you for stepping into The Circle.
+                            <p style="color:#ccc; font-size:15px; margin:0 0 20px; line-height:1.8;">
+                                Thank you for connecting with Nafasz Global.
                             </p>
                             <p style="color:#bbb; font-size:14px; margin:0 0 20px; line-height:1.8;">
-                                Your vision has been received. Our team will review your submission carefully, 
-                                and we will be in touch shortly to schedule your <strong style="color:#E8A050;">Initial Conversation</strong> 
-                                with the Team.
+                                At Nafasz Global, we begin each engagement with a focused initial Zoom conversation to understand your objectives and assess alignment.
                             </p>
                             <p style="color:#bbb; font-size:14px; margin:0 0 20px; line-height:1.8;">
-                                In the meantime, we invite you to reflect on the legacy of the 300-year 
-                                Yolngu-Macassan trade bridge — a relationship built on kinship and reciprocal 
-                                exchange — which continues to inspire our work today.
+                                Our team will reach out shortly to coordinate a suitable time for this discussion. If you have a preferred time, please feel free to let us know.<br><br>
+                                Alternatively, you may select a time here if convenient: <a href="https://calendly.com/it-nafaszglobal/30min" style="color:#E8A050; text-decoration:none;">https://calendly.com/it-nafaszglobal/30min</a>
+                            </p>
+                            <p style="color:#bbb; font-size:14px; margin:0 0 20px; line-height:1.8;">
+                                Following this conversation, we will outline appropriate next steps based on your priorities and nature of the opportunity.
+                            </p>
+                            <p style="color:#bbb; font-size:14px; margin:0 0 20px; line-height:1.8;">
+                                We look forward to speaking with you.
                             </p>
 
                             <!-- Divider -->
@@ -199,13 +202,9 @@ function buildAutoReplyEmail({ name }) {
                                 </tr>
                             </table>
 
-                            <p style="color:#999; font-size:13px; margin:0 0 4px; line-height:1.7; font-style:italic;">
-                                "Old Wisdom, New Markets: Architecting the Future of Exchange."
-                            </p>
-                            <p style="color:#666; font-size:12px; margin:16px 0 0; line-height:1.6;">
-                                Warm regards,<br>
-                                <strong style="color:#ccc;">The Nafasz Global Team</strong><br>
-                                <span style="color:#888;">Naarm (Melbourne) · Jakarta</span>
+                            <p style="color:#666; font-size:13px; margin:16px 0 0; line-height:1.6;">
+                                Kind regards,<br><br>
+                                <strong style="color:#ccc;">Nafasz Global team</strong>
                             </p>
                         </td>
                     </tr>
@@ -376,7 +375,7 @@ export default {
                 sendEmail(env.RESEND_API_KEY, {
                     from: senderFrom,
                     to: email,
-                    subject: 'Thank you for stepping into The Circle — Nafasz Global',
+                    subject: 'Initial Discussion - Nafasz Global',
                     html: buildAutoReplyEmail({ name }),
                 }),
             ]);
