@@ -1,0 +1,34 @@
+name: Deploy to DomaiNesia FTP
+
+on:
+  push:
+    branches:
+      - main # Jalankan otomatis setiap ada perubahan di cabang utama (main)
+
+jobs:
+  web-deploy:
+    name: Build & Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: Get latest code
+      uses: actions/checkout@v4
+      
+    - name: Use Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+
+    - name: Install dependencies & Build
+      run: |
+        npm install
+        npm run build
+        
+    - name: Sync files to Cpanel via FTP
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      with:
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        local-dir: ./dist/      # Folder lokal hasil build
+        server-dir: ./public_html/ # Bawaan umum cPanel (Folder target di hosting)
+        danger-action: sync # Pastikan sinkronisasi 1 arah (hapus file lama tidak terpakai)
