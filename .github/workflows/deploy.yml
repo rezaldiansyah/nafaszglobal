@@ -31,4 +31,3 @@ jobs:
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./dist/      # Folder lokal hasil build
         server-dir: ./public_html/ # Bawaan umum cPanel (Folder target di hosting)
-        danger-action: sync # Pastikan sinkronisasi 1 arah (hapus file lama tidak terpakai)
