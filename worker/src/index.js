@@ -181,8 +181,8 @@ function buildAutoReplyEmail({ name }) {
                             </p>
                             <p style="color:#bbb; font-size:14px; margin:0 0 20px; line-height:1.8;">
                                 Your vision has been received. Our team will review your submission carefully, 
-                                and we will be in touch shortly to schedule your <strong style="color:#E8A050;">Initial Discovery Briefing</strong> 
-                                with the Director.
+                                and we will be in touch shortly to schedule your <strong style="color:#E8A050;">Initial Conversation</strong> 
+                                with the Team.
                             </p>
                             <p style="color:#bbb; font-size:14px; margin:0 0 20px; line-height:1.8;">
                                 In the meantime, we invite you to reflect on the legacy of the 300-year 
