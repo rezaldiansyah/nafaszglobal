@@ -30,4 +30,4 @@ jobs:
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./dist/      # Folder lokal hasil build
-        server-dir: ./public_html/ # Bawaan umum cPanel (Folder target di hosting)
+        server-dir: ./          # Perbaiki ini: Akun FTP sudah berada di dalam public_html
