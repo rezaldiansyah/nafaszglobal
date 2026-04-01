@@ -50,19 +50,19 @@
     "hub3": "Indo-Pacific Corridor"
   },
   "funnel": {
-    "label": "Connect",
     "question": "We are weaving the future of exchange. What vision would you bring to shape the next 300 years with us?",
+    "success_desc": "Your vision has been received. We will be in touch to schedule your Initial Conversation with the Team.",
+    "ph_vision": "Share your vision...",
     "cta": "Step Into The Circle",
+    "ph_name": "Your Name",
+    "label": "Connect",
+    "ph_email": "Email Address",
     "calendly": "Initial Conversation with the Team",
     "success_title": "Thank you.",
-    "success_desc": "Your vision has been received. We will be in touch to schedule your Initial Conversation with the Team.",
-    "ph_name": "Your Name",
-    "ph_email": "Email Address",
-    "ph_org": "Organisation",
-    "ph_vision": "Share your vision..."
+    "ph_org": "Organisation"
   },
   "hero": {
-    "headline": "Old Wisdom, New Markets:",
+    "headline": "Old Wisdom, New Markets",
     "headline2": "Architecting the Future of Exchange.",
     "subheadline": "Nafasz Global is a boutique advisory pioneering equitable sovereign wealth transitions. We convene Industry Leaders, First Nations Sovereignty, and Global Capital to co-design and architect resilient industrial consortiums across the Indo-Pacific.",
     "cta": "Step Into The Circle"
