@@ -339,7 +339,7 @@ function build() {
     console.log('🍔 Building menu data...');
 
     // Read global settings
-    const settingsPath = path.join(ROOT, 'src/content/settings.json');
+    const settingsPath = path.join(ROOT, 'public/settings.json');
     let settings = { menu_enabled: false };
     if (fs.existsSync(settingsPath)) {
         settings = JSON.parse(fs.readFileSync(settingsPath, 'utf-8'));

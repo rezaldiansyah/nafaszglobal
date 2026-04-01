@@ -31,7 +31,7 @@ async function loadMenuData() {
 
     // 1) Check settings.json for the menu_enabled flag (real-time from CMS)
     try {
-        const settingsRes = await fetch('/src/content/settings.json?' + Date.now());
+        const settingsRes = await fetch('/settings.json?' + Date.now());
         if (settingsRes.ok) {
             const settings = await settingsRes.json();
             enabled = settings.menu_enabled === true;

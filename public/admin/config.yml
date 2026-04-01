@@ -274,7 +274,7 @@ collections:
     files:
       - name: "site-settings"
         label: "🍔 Menu & Navigation"
-        file: "src/content/settings.json"
+        file: "public/settings.json"
         description: "Control the hamburger menu on the main website"
         fields:
           - label: "Enable Navigation Menu"
