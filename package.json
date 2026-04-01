@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "Nafasz Global — Sovereign Trust Portal",
+  "description": "Nafasz Global — Indo-Pacific Collaborative Corridor Initiative",
   "scripts": {
     "dev": "vite",
     "pages": "node scripts/build-pages.js",

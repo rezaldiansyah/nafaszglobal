@@ -64,7 +64,7 @@ function buildNotificationEmail({ name, email, organisation, vision }) {
                     <tr>
                         <td style="padding:32px 40px;">
                             <p style="color:#ccc; font-size:14px; margin:0 0 24px; line-height:1.6;">
-                                A new enquiry has been received through the Sovereign Trust Portal.
+                                A new enquiry has been received through the Indo-Pacific Collaborative Corridor Initiative.
                             </p>
 
                             <!-- Name -->
@@ -130,7 +130,7 @@ ${escapeHtml(vision)}
                     <tr>
                         <td style="padding:20px 40px; border-top:1px solid #2a2a2a;">
                             <p style="color:#555; font-size:11px; margin:0; text-align:center;">
-                                Received via nafaszglobal.com — Sovereign Trust Portal
+                                Received via nafaszglobal.com — Indo-Pacific Collaborative Corridor Initiative
                             </p>
                         </td>
                     </tr>
@@ -166,7 +166,7 @@ function buildAutoReplyEmail({ name }) {
                                 NAFASZ GLOBAL
                             </h1>
                             <p style="margin:8px 0 0; color:#999; font-size:12px; letter-spacing:2px;">
-                                SOVEREIGN TRUST PORTAL
+                                Indo-Pacific Collaborative Corridor Initiative
                             </p>
                         </td>
                     </tr>
