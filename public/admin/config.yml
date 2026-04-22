@@ -306,3 +306,18 @@ collections:
       - { label: "🔢 Menu Order", name: "menu_order", widget: "number", default: 10, value_type: "int", min: 1, max: 99, hint: "Order in the menu (1 = first, 2 = second, etc.)" }
       - { label: "📄 Body (English)", name: "body", widget: "markdown" }
       - { label: "📄 Body (Indonesian)", name: "body_id", widget: "markdown", required: false }
+
+  # ============================================================
+  # COLLECTION 4: User Guide
+  # Static instructions for CMS management
+  # ============================================================
+  - name: "guide"
+    label: "📖 User Guide"
+    description: "Panduan lengkap penggunaan CMS dan cara update website."
+    files:
+      - name: "user-manual"
+        label: "📘 Baca Panduan Di Sini"
+        file: "src/content/guide.md"
+        fields:
+          - { label: "Panduan", name: "body", widget: "markdown" }
+
