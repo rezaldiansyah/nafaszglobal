@@ -318,7 +318,7 @@ collections:
         label: "📘 Baca Panduan Di Sini"
         file: "src/content/guide.md"
         fields:
-          - { label: "Panduan", name: "body", widget: "markdown" }
+          - { label: "Panduan", name: "body", widget: "markdown", hint: "⚠️ PANDUAN: Jangan mengedit di kolom ini kecuali Anda ingin merubah isi manual. Gunakan panel di sebelah kanan untuk membaca instruksi dengan nyaman." }
 
   # ============================================================
   # COLLECTION 5: Branding & Assets
