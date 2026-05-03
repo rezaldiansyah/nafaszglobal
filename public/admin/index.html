@@ -633,6 +633,28 @@
             // ===== SITE CONTENT PREVIEW (English) =====
             CMS.registerPreviewTemplate('content-en', createSitePreview);
             CMS.registerPreviewTemplate('content-id', createSitePreview);
+
+            // ===== USER GUIDE PREVIEW =====
+            CMS.registerPreviewTemplate('guide', createGuidePreview);
+        }
+
+        function createGuidePreview(props) {
+            const entry = props.entry;
+            const body = entry.getIn(['data', 'body']) || '';
+            const h = window.h || props.h || CMS.h;
+
+            return h('div', { className: 'preview', style: { background: '#f8f6f3', color: '#333', padding: '40px' } },
+                h('div', { 
+                    className: 'guide-content', 
+                    style: { 
+                        fontFamily: 'Inter, sans-serif', 
+                        lineHeight: '1.6',
+                        maxWidth: '800px',
+                        margin: '0 auto'
+                    },
+                    dangerouslySetInnerHTML: { __html: props.widgetFor('body') }
+                })
+            );
         }
 
         function createSitePreview(props) {

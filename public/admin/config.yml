@@ -16,7 +16,6 @@ backend:
 # This is automatically ignored in production when the proxy isn't running
 local_backend: true
 
-# Where uploaded images/media will be stored
 media_folder: "public/uploads"
 public_folder: "/uploads"
 
@@ -313,11 +312,28 @@ collections:
   # ============================================================
   - name: "guide"
     label: "📖 User Guide"
-    description: "Panduan lengkap penggunaan CMS dan cara update website."
+    description: "⚠️ PANDUAN: Halaman ini berisi instruksi. Gunakan pratinjau di sisi kanan untuk membaca. JANGAN menekan Publish kecuali Anda ingin merubah isi panduan ini."
     files:
       - name: "user-manual"
         label: "📘 Baca Panduan Di Sini"
         file: "src/content/guide.md"
         fields:
           - { label: "Panduan", name: "body", widget: "markdown" }
+
+  # ============================================================
+  # COLLECTION 5: Branding & Assets
+  # Manage logos, favicons, and other core images
+  # ============================================================
+  - name: "branding"
+    label: "🎨 Branding & Assets"
+    description: "Ganti logo, favicon, dan gambar utama website di sini."
+    files:
+      - name: "logos"
+        label: "🖼️ Logo & Favicon"
+        file: "src/content/branding.json"
+        fields:
+          - { label: "Main Logo (PNG)", name: "logo", widget: "image", hint: "Logo utama yang muncul di pojok kiri atas/welcome screen." }
+          - { label: "Favicon (Icon Tab Browser)", name: "favicon", widget: "image", hint: "Ikon kecil yang muncul di tab browser (Format PNG/ICO)." }
+          - { label: "Map Image (SVG)", name: "map_svg", widget: "image", hint: "Gambar peta koridor Indo-Australia (Format SVG)." }
+          - { label: "Apple Touch Icon", name: "apple_icon", widget: "image", hint: "Ikon saat website disimpan di layar utama HP (iPhone)." }
 
